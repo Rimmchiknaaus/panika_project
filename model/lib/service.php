@@ -26,21 +26,16 @@ public static function getUser(string $email)
         return $user;
     }
 
-    public static function createUser($prenom, $nom, $email, $phone,  $password, $hashedPassword): bool
+    public static function createService($idCategorie, $fr_libelle, $ru_libelle,  $prix, $duree, $actif): bool
     {
-        // Prépare la requête
-        // NOTE la requête a des paramètres !
-        // NOTE il faut utiliser 'bindParam' pour 'faire le lien' entre, par exemple, le 'paramètre nommé' ':label' dans la requête, et la variable passée en paramètre de la fonction $label
-        $query = '  INSERT INTO utilisateur(prenom, nom, email, phone, password, hashedPassword) VALUES(:prenom, :nom, :email, :phone, :password, :hashedPassword)';
+        $query = '  INSERT INTO prestation(idCategorie, fr_libelle, ru_libelle, prix, duree, actif) VALUES(:idCategorie, :fr_libelle, :ru_libelle, :prix, :duree, :actif)';
         $statement = LibBdd::connect()->prepare($query);
-        $statement->bindParam(':prenom', $prenom);
-        $statement->bindParam(':nom', $nom);
-        $statement->bindParam(':email', $email);
-        $statement->bindParam(':phone', $phone);
-        $statement->bindParam(':password', $password);
-        $statement->bindParam(':hashedPassword', $hashedPassword);
-
-
+        $statement->bindParam(':idCategorie', $idCategorie);
+        $statement->bindParam(':fr_libelle', $fr_libelle);
+        $statement->bindParam(':ru_libelle', $ru_libelle);
+        $statement->bindParam(':prix', $prix);
+        $statement->bindParam(':duree', $duree);
+        $statement->bindParam(':actif', $actif);
 
         $successOrFailure = $statement->execute();
 
@@ -75,4 +70,13 @@ public static function updateUser($id, $prenom, $nom, $email, $phone,  $password
         return $successOrFailure;
 }
 
+public static function readAllCategorie(string $lang = 'fr'): ?array
+{
+    $libelleCol = $lang . 'libelle';
+
+    $query = 'SELECT categorie.id, categorie.libelle  FROM categorie ORDER BY label ASC';
+    $statement = LibBdd::connect()->prepare($query);
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
 }

@@ -6,9 +6,9 @@ START TRANSACTION
 ;
 
 INSERT INTO categorie (fr_libelle, ru_libelle, image) VALUES 
-('Manucure', 'Маникюр', 'images/manucure.jpg'),
-('Pédicure', 'Педикюр', 'images/pedicure.jpg'),
-('Extension de cils', 'Наращивание ресниц', 'images/cils.jpg')
+('Manucure', 'Маникюр', 'img/manicure.jpeg'),
+('Pédicure', 'Педикюр', 'img/padicure.jpeg'),
+('Extension de cils', 'Наращивание ресниц', 'img/cils.jpeg')
 ;
 
 INSERT INTO utilisateur (prenom, nom, email, phone, password, hashedPassword, role)

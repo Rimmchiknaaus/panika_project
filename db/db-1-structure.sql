@@ -32,8 +32,6 @@ CREATE TABLE prestation (
     idCategorie INT UNSIGNED NOT NULL,
     fr_libelle VARCHAR(150),
     ru_libelle VARCHAR(150),
-    fr_description TEXT,
-    ru_description TEXT,
     prix DECIMAL(10,2) NOT NULL,
     duree INT,
     actif BOOLEAN DEFAULT TRUE,

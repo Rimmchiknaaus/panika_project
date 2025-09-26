@@ -29,6 +29,15 @@ return [
     'signup_button' => 'Зарегистрироваться',
     'nav_services' => "Услуги",
 
-    'prestation-add_btn' => "Добавить услугу"
+    'prestation-add_btn' => "Добавить услугу", 
+
+    'prestation_add_title'   => "Добавить услугу",
+    'prestation_fr_libelle'  => "Название (FR)",
+    'prestation_ru_libelle'  => "Название (RU)",
+    'categorie'   => "Категория",
+    'prix'        => "Цена (₽)",
+    'duree'       => "Длительность (минуты)",
+    'actif'       => "Активна",
+    'add_btn'     => "Добавить",
 ];
 

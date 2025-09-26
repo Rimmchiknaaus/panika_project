@@ -29,6 +29,16 @@ return [
     'signup_button' => "S'inscrire",
     'nav_services' => "Prestations",
 
-    'prestation-add_btn' => "Ajouter une prestation"
+    'prestation-add_btn' => "Ajouter une prestation",
+
+
+    'prestation_add_title'   => "Ajouter une prestation",
+    'prestation_fr_libelle'  => "Nom FR",
+    'prestation_ru_libelle'  => "Nom RU",
+    'categorie'   => "Catégorie",
+    'prix'        => "Prix (€)",
+    'duree'       => "Durée (minutes)",
+    'actif'       => "Active",
+    'add_btn'     => "Ajouter",
 ];
 
