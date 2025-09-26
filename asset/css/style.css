@@ -1,0 +1,12 @@
+@import url('header.css');
+@import url('message.css');
+
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+#map { height: 300px;  width: 600px; }
+a {
+  text-decoration: none;
+}
