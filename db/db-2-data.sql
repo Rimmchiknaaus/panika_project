@@ -11,8 +11,18 @@ INSERT INTO categorie (fr_libelle, ru_libelle, image) VALUES
 ('Extension de cils', 'Наращивание ресниц', 'images/cils.jpg')
 ;
 
+INSERT INTO utilisateur (prenom, nom, email, phone, password, hashedPassword, role)
+VALUES (
+    'Rimma',
+    'Panika',
+    'admin@panika.com',
+    '+33000000000',
+    NULL,
+    '$2b$12$E1RzsA5TKzgLlCDsQwRQausRKdzoaXWRfPucBFhKSmwcgAAyAe.fK',
+    'admin'
+);
 
- -- Termine la transaction
- -- (si _toutes_ les commandes à l'interieur de la 'transaction' se sont bien passé, c'est parfait; sinon, tout est annulé. c'est très pratique !)
+-- Termine la transaction
+-- (si _toutes_ les commandes à l'interieur de la 'transaction' se sont bien passé, c'est parfait; sinon, tout est annulé. c'est très pratique !)
 COMMIT
 ;

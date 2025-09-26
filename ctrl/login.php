@@ -36,7 +36,7 @@ class loginUser extends Ctrl
         if ($user && password_verify($password, $user['hashedPassword'])) {
             $_SESSION['user'] = $user;
         
-            $_SESSION['msg']['success'] = 'Bienvenue, ' . htmlspecialchars($user['name']) . '!';
+            $_SESSION['msg']['success'] = 'Bienvenue, ' . htmlspecialchars($user['prenom']) . '!';
             $this->redirectTo('/ctrl/home.php');
             exit();
         } else {

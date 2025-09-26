@@ -31,8 +31,8 @@ class registerUser extends Ctrl
         $phone = $_POST['myPhone'];
         $password = $_POST['myPassword'];
         $passwordRepeat = $_POST['myPasswordRepeat'];
-        $firstname = $_POST['myFirstname'];
-        $name = $_POST['myName'];
+        $nom = $_POST['myFirstname'];
+        $prenom = $_POST['myName'];
 
 
         // Vérifie les mots de passe
@@ -53,7 +53,7 @@ class registerUser extends Ctrl
         exit();
 }
         // Création dans la BDD
-        $success = Auth::createUser($firstname, $name, $email, $phone, $password,  $hashedPassword);
+        $success = Auth::createUser($nom, $prenom, $email, $phone, $password,  $hashedPassword);
 
         // Ajoute une notification d'erreur
         if (!$success) {
@@ -66,7 +66,6 @@ class registerUser extends Ctrl
         $this->redirectTo('/ctrl/login-display.php');
         exit();
 
-       
     }
 }
 

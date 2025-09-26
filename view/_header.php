@@ -35,7 +35,7 @@
                     <li><a href="/ctrl/rdv-display.php"><?= $language['nav_rdv'] ?></a></li>
 
                     <?php if (!empty($_SESSION['user'])): ?>
-                        <li><a href="/ctrl/profile.php"><?= $language['nav_profile'] . ', ' . $_SESSION['user']['name'] ?>!</a></li>
+                        <li><a href="/ctrl/profile.php"><?= $language['nav_profile'] . ', ' . $_SESSION['user']['prenom'] ?>!</a></li>
                         <li><a href="/ctrl/logout.php"><?= $language['nav_logout'] ?></a></li>
                     <?php else: ?>
                         <li><a href="/ctrl/login-display.php"><?= $language['nav_login'] ?></a></li>
