@@ -26,6 +26,9 @@ return [
     'rdv_button' => 'Записаться',
 
     'register_title' => 'Регистрация',
-    'signup_button' => 'Зарегистрироваться'
+    'signup_button' => 'Зарегистрироваться',
+    'nav_services' => "Услуги",
+
+    'prestation-add_btn' => "Добавить услугу"
 ];
 

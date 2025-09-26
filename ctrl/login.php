@@ -44,7 +44,7 @@ class loginUser extends Ctrl
             $this->redirectTo('/ctrl/login-display.php');
             exit();
         }
-       
+
     }
 }
 

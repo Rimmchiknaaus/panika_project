@@ -26,6 +26,9 @@ return [
     'rdv_button' => 'Prendre RDV',
 
     'register_title' => 'Inscription',
-    'signup_button' => "S'inscrire"
+    'signup_button' => "S'inscrire",
+    'nav_services' => "Prestations",
+
+    'prestation-add_btn' => "Ajouter une prestation"
 ];
 

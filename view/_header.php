@@ -41,6 +41,7 @@
                         <li><a href="/ctrl/login-display.php"><?= $language['nav_login'] ?></a></li>
                         <li><a href="/ctrl/register-display.php"><?= $language['nav_register'] ?></a></li>
                     <?php endif; ?>
+                        <li><a href="/ctrl/prestation-list.php"><?= $language['nav_services'] ?></a></li>
                 </ul>
             </div>
         </nav>
