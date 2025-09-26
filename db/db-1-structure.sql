@@ -74,4 +74,45 @@ CREATE TABLE produit (
     ru_libelle VARCHAR(150),
     fr_description TEXT,
     ru_description TEXT,
-  
+    prix DECIMAL(10,2),
+    stock INT DEFAULT 0,
+    image VARCHAR(255),
+    actif BOOLEAN DEFAULT TRUE
+) ENGINE=InnoDB;
+
+CREATE TABLE commande (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    idUtilisateur INT UNSIGNED NOT NULL,
+    prix_total DECIMAL(10,2) NOT NULL,
+    quantite INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(id)
+) ENGINE=InnoDB;
+
+CREATE TABLE commande_produit (
+    idCommande INT UNSIGNED NOT NULL,
+    idProduit INT UNSIGNED NOT NULL,
+    PRIMARY KEY (idCommande, idProduit),
+    FOREIGN KEY (idCommande) REFERENCES commande(id),
+    FOREIGN KEY (idProduit) REFERENCES produit(id)
+) ENGINE=InnoDB;
+
+CREATE TABLE avis (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    idUtilisateur INT UNSIGNED NOT NULL,
+    contenu TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(id)
+) ENGINE=InnoDB;
+
+CREATE TABLE commentaire (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    idUtilisateur INT UNSIGNED NOT NULL,
+    idAvis INT UNSIGNED NOT NULL,
+    contenu TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(id),
+    FOREIGN KEY (idAvis) REFERENCES avis(id)
+) ENGINE=InnoDB;
