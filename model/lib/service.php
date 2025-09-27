@@ -11,7 +11,7 @@ use  App\Model\Lib\BDD as LibBdd;
 class Service
 {
 
-public static function getUser(string $email) 
+public static function getService(string $email) 
     {
         // Prépare la requête
         $query = '  SELECT utilisateur.id, utilisateur.prenom, utilisateur.nom, utilisateur.email, utilisateur.phone, utilisateur.password, utilisateur.hashedPassword, utilisateur.role';
@@ -72,9 +72,10 @@ public static function updateUser($id, $prenom, $nom, $email, $phone,  $password
 
 public static function readAllCategorie(string $lang = 'fr'): ?array
 {
-    $libelleCol = $lang . 'libelle';
+    $libelleCol = $lang . '_libelle';
 
-    $query = 'SELECT categorie.id, categorie.libelle  FROM categorie ORDER BY label ASC';
+    $query = "SELECT categorie.id, categorie." . $libelleCol . " AS libelle FROM categorie";
+
     $statement = LibBdd::connect()->prepare($query);
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);

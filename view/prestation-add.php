@@ -4,9 +4,10 @@
     <input type="text" name="ru_libelle" placeholder="<?= $language['prestation_ru_libelle'] ?>"><br>
 
     <select name="idCategorie" placeholder="<?= $language['categorie'] ?>">
-        <option value="1">Manucure</option>
-        <option value="2">Pédicure</option>
-        <option value="3">Extension de cils</option>
+    <?php foreach ($args['listCategorie'] as $c){ ?>
+        <option <?= $c['id'] ?>><?= $c['libelle'] ?></option>
+        <?php } ?>
+
     </select><br>
 
     <input type="number" step="0.01" name="prix"  placeholder="<?= $language['prix'] ?>"><br>
