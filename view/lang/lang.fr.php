@@ -44,5 +44,7 @@ return [
     'nav_galerie' => "Galerie",
     'nav_avis' => "Avis",
     'nav_panier' => "Panier",
+
+    'h2_prestations' => "Nos Services",
 ];
 

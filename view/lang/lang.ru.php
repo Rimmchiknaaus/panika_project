@@ -43,5 +43,7 @@ return [
     'nav_galerie' => "Галерея",
     'nav_avis' => "Отзывы",
     'nav_panier' => "Корзина",
+
+    'h2_prestations' => "Наши услуги",
 ];
 

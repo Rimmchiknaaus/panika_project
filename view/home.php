@@ -13,6 +13,30 @@
             <div class="hero__right">
                 <img src="/img/hero_1.png" alt="Espace de beauté PANIKA">
             </div>
+</section>
+<section class="services">
+            <div class="services__header">
+                <h2 class="services__title"><?= $language['h2_prestations']?></h2>
+                <h3 class="services__subtitle"> Découvrez nos prestations de beauté</h3>
+            </div>
+            <div class="services__list">
+            <?php foreach ($args['listCategorie'] as $c){ ?>
+                <div class="service__card">
+                    <div class="service__img">
+                        <img src="<?= $c['image'] ?>" alt="<?= $c['libelle'] ?>">
+                        <p class="service__text"  <?= $c['id'] ?>><?= $c['libelle'] ?>
+                        </p>
+
+                    </div>
+                    <?php } ?>
+
+                </div>
+                
+            </div>
+            <div class="services__btn">
+                <a href="services.html">Voir plus</a>
+                <a href="rdv.html">Prendre rendez-vous</a>         
+            </div>
         </section>
         <section id="contact">
         <h2><?=$language['contact_title']?></h2>
