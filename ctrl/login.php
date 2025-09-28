@@ -8,6 +8,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/auth.php';
 use App\Ctrl\Ctrl;
 use App\Model\Lib\Auth\Auth;
 
+session_start();
+
 /** Montre le forme pour ajouter des question. */
 class loginUser extends Ctrl
 {
