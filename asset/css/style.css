@@ -88,6 +88,125 @@ h1 {
     margin-bottom: 20px;
   }
 }
+/* SERVICES */
+.services {
+  padding: 20px;
+  text-align: center;
+  background-color: #FEEFF2;
+}
+
+.services__title {
+  font-family: "Work Sans", sans-serif;
+  color: #B8B5B9;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.services__subtitle {
+  font-family: "Work Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #252224;
+  margin-bottom: 16px;
+}
+
+.services__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.service__card {
+  max-width: 400px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service__card:hover {
+  transform: translateY(-6px);
+}
+
+.service__img img {
+  width: 100%;
+  height: 240px;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.service__card:hover .service__img img {
+  transform: scale(1.05);
+}
+
+.service__text {
+  font-size: 18px;
+  color: #6A524C;
+  text-align: left;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.service__subtext {
+  font-size: 14px;
+  color: #A3A2A5;
+  text-align: left;
+}
+
+.services__btn {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .services {
+    padding: 40px;
+  }
+  .services__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .service__card {
+    flex: 1 1 calc(50% - 20px);
+  }
+  .service__img img {
+    height: 280px;
+  }
+  .services__btn {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .services__btn a {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
+@media (min-width: 1200px) {
+  .services {
+    margin: 100px auto;
+    padding: 80px 120px;
+  }
+  .services__subtitle {
+    font-size: 24px;
+  }
+  .service__card {
+    flex: 1 1 calc(33.333% - 30px);
+  }
+  .service__img img {
+    height: 320px;
+  }
+  .service__text {
+    font-size: 20px;
+  }
+  .service__subtext {
+    font-size: 16px;
+  }
+}
 .header {
   background: #FFFFFF;
   padding: 10px 0px;
@@ -196,17 +315,19 @@ h1 {
     display: none;
   }
 }
-.btn__rdv {
+.btn__rdv,
+.btn__voirPlus {
   background: #FDFDFE;
   color: #6D6D6E;
-  padding: 8px 14px;
+  padding: 12px 24px;
   border: 1px solid #6D6D6E;
   font-weight: 600;
   font-size: 16px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.btn__rdv:hover {
+.btn__rdv:hover,
+.btn__voirPlus:hover {
   background: #060606;
   color: #DDDBD9;
 }

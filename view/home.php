@@ -34,8 +34,8 @@
                 
             </div>
             <div class="services__btn">
-                <a href="services.html">Voir plus</a>
-                <a href="rdv.html">Prendre rendez-vous</a>         
+                <a  href="services.html" class="btn__voirPlus">Voir plus</a>
+                <a  href="rdv.html" class="btn__rdv"><?= $language['rdv_button']?></a>         
             </div>
         </section>
         <section id="contact">

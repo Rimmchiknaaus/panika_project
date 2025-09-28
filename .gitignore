@@ -3,3 +3,6 @@ vendor/
 node_modules/
 *.pdf
 *.jpeg
+style.css/
+style.scss/
+style.css.map/

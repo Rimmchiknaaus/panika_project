@@ -1,14 +1,17 @@
-.btn__rdv {
+.btn__rdv,
+.btn__voirPlus {
     background:#FDFDFE;
     color: #6D6D6E;
-    padding:8px 14px;
+    padding: 12px 24px;
     border: 1px solid #6D6D6E;
     font-weight:600;
     font-size: 16px;
-    transition:background-color .2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.btn__rdv:hover { 
+.btn__rdv:hover,
+.btn__voirPlus:hover
+ { 
     background:#060606; 
     color: #DDDBD9;
 
@@ -17,3 +20,5 @@
 .language_link{
     color: #DDDBD9;
 }
+
+

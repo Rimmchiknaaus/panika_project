@@ -23,7 +23,7 @@ return [
     'edit_profile_link' => 'Modifier mon profil',
 
     'rdv_title' => 'Prendre RDV',
-    'rdv_button' => 'Prendre RDV',
+    'rdv_button' => 'Prendre rendez-vous',
 
     'register_title' => 'Inscription',
     'signup_button' => "S'inscrire",
