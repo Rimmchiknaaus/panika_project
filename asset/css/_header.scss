@@ -47,10 +47,14 @@
 
 }
 
-
 .header__nav_menu a{
   background:#FFFFFF;
   font-size: 16px;
+  color: $smallTextGrey;
+  
+  &:hover{
+    color: $smallTextGreyHover;
+  }
 }
 
 @media (max-width: 991px) {
@@ -78,5 +82,20 @@
   .burger {
     position:relative;
     z-index:1001;
+    i{
+      color: $smallTextGrey;
+      &:hover{
+        color: $smallTextGreyHover;
+      }
+    }
   }
+
+  h1{
+    font-size: 32px;
+    }
+  .footer {
+    padding: 10px;
+    font-size: 12px;
+    background-color: aqua;
+    }
 }

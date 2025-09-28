@@ -1,0 +1,23 @@
+.footer {
+    background-color:$lowBGC;
+    color: $smallTextGrey;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.footer i {
+    color: $smallTextGrey;
+    width: 24px;
+}
+
+@media (max-width: 991px) {
+.footer {
+    padding: 10px;
+    font-size: 12px;
+    }
+}

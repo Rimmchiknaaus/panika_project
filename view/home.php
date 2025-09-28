@@ -3,8 +3,6 @@
 ?>
 <main>
     <section>
-        <h2>Contenu de la SESSION</h2>
-        <pre><?php var_dump($_SESSION) ?></pre>
 
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!

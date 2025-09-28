@@ -32,7 +32,7 @@
             </a>
         </div>
 
-        <button class="burger" onclick="toggleMenu()">☰</button>
+        <button class="burger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
 
         <nav class="header__nav_menu" id="main-nav">
             <ul>
@@ -60,6 +60,7 @@ function toggleMenu() {
   nav.classList.toggle('show');
 }
 </script>
+<script src="https://kit.fontawesome.com/026a02d0be.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
