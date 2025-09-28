@@ -2,7 +2,7 @@
 return [
     'site' => 'PANIKA',
     'nav_contact' => 'Contacts',
-    'nav_rdv' => 'Prendre RDV',
+    'nav_rdv' => 'Prendre rendez-vous',
     'nav_profile' => 'Bonjour',
     'nav_logout' => 'Déconnexion',
     'nav_login' => 'Connexion',
@@ -40,5 +40,9 @@ return [
     'duree'       => "Durée (minutes)",
     'actif'       => "Active",
     'add_btn'     => "Ajouter",
+    'nav_shop' => "Shop",
+    'nav_galerie' => "Galerie",
+    'nav_avis' => "Avis",
+    'nav_panier' => "Panier",
 ];
 

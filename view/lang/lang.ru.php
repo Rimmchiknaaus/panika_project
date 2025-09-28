@@ -39,5 +39,9 @@ return [
     'duree'       => "Длительность (минуты)",
     'actif'       => "Активна",
     'add_btn'     => "Добавить",
+    'nav_shop' => "Shop",
+    'nav_galerie' => "Галерея",
+    'nav_avis' => "Отзывы",
+    'nav_panier' => "Корзина",
 ];
 

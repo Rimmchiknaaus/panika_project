@@ -1,12 +1,135 @@
-@import url('header.css');
-@import url('message.css');
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 400;
+}
 
+a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #060606;
+}
 
 html {
-    scroll-behavior: smooth;
-  }
-  
-#map { height: 300px;  width: 600px; }
+  scroll-behavior: smooth;
+}
+
+#map {
+  height: 300px;
+  width: 600px;
+}
+
 a {
   text-decoration: none;
 }
+
+main {
+  width: 95%;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.header {
+  background: #FFFFFF;
+  padding: 10px 40px;
+  position: relative;
+  z-index: 1000;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__nav_logo img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.language_link {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.burger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.header__nav_menu ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+}
+
+.header__nav_menu a {
+  background: #FFFFFF;
+  font-size: 16px;
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 10px 20px;
+  }
+  .burger {
+    display: block;
+  }
+  #main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  #main-nav.show {
+    display: block;
+  }
+  .header__nav_menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .header__left,
+  .burger {
+    position: relative;
+    z-index: 1001;
+  }
+}
+.btn__rdv {
+  background: #FDFDFE;
+  color: #6D6D6E;
+  padding: 8px 14px;
+  border: 1px solid #6D6D6E;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.btn__rdv:hover {
+  background: #060606;
+  color: #DDDBD9;
+}
+
+.language_link {
+  color: #DDDBD9;
+}/*# sourceMappingURL=style.css.map */

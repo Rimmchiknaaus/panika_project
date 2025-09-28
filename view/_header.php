@@ -5,65 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $args['pageTitle'] ?? $pageTitle ?? '' ?></title>
     <link rel="stylesheet" href="/asset/css/style.css">
-    <link rel="stylesheet" href="/assets/css/main.css">
+        <link rel="stylesheet" href="/asset/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/node_modules/leaflet/dist/leaflet.css">
     <script src="/node_modules/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/view/lang/lang-init.php'; ?>
-    <header>
-        <nav class="navbar">
-            <ul class="nav-left">
-                <li><a class="logo" href="/index.php"><?= $language['site'] ?></a></li>
-                <li>
-                    <div class="language-link">
-                        <a class="language-link-item" href="/ctrl/home.php?lang=ru"
-                            <?php if($lang == 'ru'){?> style="color: #ff9900;" <?php } ?>>RU</a> | 
-                        <a class="language-link-item" href="/ctrl/home.php?lang=fr"
-                            <?php if($lang == 'fr'){?> style="color: #ff9900;" <?php } ?>>FR</a>    
-                    </div>
-                </li>
-            </ul>
+<header class="header">
+    <div class="header__nav">
 
-            <!-- Bouton burger pour les écrans mobiles -->
-            <button class="burger" onclick="toggleMenu()">☰</button>  
+        <div class="header__left">
+            <a class="header__nav_logo" href="/ctrl/home.php">
+                <img src="/img/panika-logo.jpg" alt="Panika Espace de beauté logo">
+            </a>
 
-            <!-- Liens de navigation -->
-            <div class="nav-right" id="navLinks">
-                <ul class="menu">
-                    <li><a href="/home.php#contact"><?= $language['nav_contact'] ?></a></li>
-                    <li><a href="/ctrl/rdv-display.php"><?= $language['nav_rdv'] ?></a></li>
-
-                    <?php if (!empty($_SESSION['user'])): ?>
-                        <li><a href="/ctrl/profile.php"><?= $language['nav_profile'] . ', ' . $_SESSION['user']['prenom'] ?>!</a></li>
-                        <li><a href="/ctrl/logout.php"><?= $language['nav_logout'] ?></a></li>
-                    <?php else: ?>
-                        <li><a href="/ctrl/login-display.php"><?= $language['nav_login'] ?></a></li>
-                        <li><a href="/ctrl/register-display.php"><?= $language['nav_register'] ?></a></li>
-                    <?php endif; ?>
-                        <li><a href="/ctrl/prestation-list.php"><?= $language['nav_services'] ?></a></li>
-                </ul>
+            <div class="language_link">
+                <a class="language_link_item" href="<?= $_SERVER['PHP_SELF'] ?>?lang=ru"
+                <?php if($lang == 'ru'){?> style="color: #6D6D6E;" <?php } ?>>RU</a> | 
+                <a class="language_link_item" href="<?= $_SERVER['PHP_SELF'] ?>?lang=fr"
+                <?php if($lang == 'fr'){?> style="color: #6D6D6E;" <?php } ?>>FR</a>    
             </div>
-        </nav>
-    </header>
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const flashContainer = document.getElementById('flash-message');
-    if (flashContainer) {
-        setTimeout(() => {
-            flashContainer.style.transition = 'opacity 0.5s ease';
-            flashContainer.style.opacity = '0';
-            setTimeout(() => {
-                flashContainer.remove();
-            }, 500);
-        }, 5000); // auto-disparition après 5 sec
-    }
-});
-function toggleMenu() {
-    const menu = document.getElementById('navLinks');
-    menu.classList.toggle('show');
-}
 
+            <a class="btn__rdv" href="/ctrl/rdv-display.php">
+                <?= $language['nav_rdv'] ?>
+            </a>
+        </div>
+
+        <button class="burger" onclick="toggleMenu()">☰</button>
+
+        <nav class="header__nav_menu" id="main-nav">
+            <ul>
+                <li><a href="/ctrl/prestation-list.php"><?= $language['nav_services'] ?></a></li>
+                <li><a href="/ctrl/galerie.php"><?= $language['nav_galerie'] ?></a></li>
+                <li><a href="/ctrl/avis.php"><?= $language['nav_avis'] ?></a></li>
+                <li><a href="/ctrl/home.php#contact"><?= $language['nav_contact'] ?></a></li>
+                <li><a href="/ctrl/panier.php"><?= $language['nav_panier'] ?></a></li>
+
+                <?php if (!empty($_SESSION['user'])): ?>
+                    <li><a href="/ctrl/profile.php"><?= $language['nav_profile'] . ', ' . $_SESSION['user']['prenom'] ?>!</a></li>
+                    <li><a href="/ctrl/logout.php"><?= $language['nav_logout'] ?></a></li>
+                <?php else: ?>
+                    <li><a href="/ctrl/login-display.php"><?= $language['nav_login'] ?></a></li>
+                    <li><a href="/ctrl/register-display.php"><?= $language['nav_register'] ?></a></li>
+                <?php endif; ?>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+function toggleMenu() {
+  const nav = document.getElementById('main-nav');
+  nav.classList.toggle('show');
+}
 </script>
+
 </body>
 </html>
