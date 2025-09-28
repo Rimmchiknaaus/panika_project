@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/node_modules/leaflet/dist/leaflet.css">
     <script src="/node_modules/leaflet/dist/leaflet.js"></script>
 </head>
-<body>
+<body class="container">
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/view/lang/lang-init.php'; ?>
 <header class="header">
     <div class="header__nav">
@@ -27,7 +27,7 @@
                 <?php if($lang == 'fr'){?> style="color: #6D6D6E;" <?php } ?>>FR</a>    
             </div>
 
-            <a class="btn__rdv" href="/ctrl/rdv-display.php">
+            <a class="btn__rdv btn__header"  href="/ctrl/rdv-display.php">
                 <?= $language['nav_rdv'] ?>
             </a>
         </div>

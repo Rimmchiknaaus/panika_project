@@ -1,6 +1,6 @@
 .header {
   background:#FFFFFF;
-  padding:10px 40px;
+  padding:10px 0px;
   position:relative;
   z-index:1000;
 }
@@ -99,3 +99,9 @@
     background-color: aqua;
     }
 }
+
+@media (max-width: 991px) {
+  .btn__header{
+      display: none;
+      }
+  }

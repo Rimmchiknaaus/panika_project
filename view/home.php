@@ -2,29 +2,18 @@
 
 ?>
 <main>
-    <section>
-
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ab, nisi ducimus totam dolore cum sit debitis sunt autem, exercitationem, minima modi sequi facere molestiae accusamus in maxime. Dolorem, labore!
-
-    </section>
+<section class="hero">
+            <div class="hero__left">            
+                <h1 class="hero__title">Espace de beauté PANIKA</h1>
+                <div class="hero__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+                <a class="btn__rdv" href="rdv.html">Prendre rendez-vous</a>
+            </div>
+            <div class="hero__right">
+                <img src="/img/hero_1.png" alt="Espace de beauté PANIKA">
+            </div>
+        </section>
         <section id="contact">
         <h2><?=$language['contact_title']?></h2>
         <div id="map">

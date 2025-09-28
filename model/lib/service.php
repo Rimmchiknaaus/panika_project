@@ -55,7 +55,7 @@ public static function updateUser($id, $prenom, $nom, $email, $phone,  $password
         $query.= '  ,utilisateur.phone = :phone';
         $query.= '  ,utilisateur.password = :password';
         $query.= '  ,utilisateur.hashedPassword = :hashedPassword';
-        $query.= '  WHERE user.id = :id';
+        $query.= '  WHERE utilisateur.id = :id';
         $statement = LibBdd::connect()->prepare($query);
         $statement->bindParam(':id', $id);
         $statement->bindParam(':prenom', $prenom);

@@ -6,13 +6,13 @@
     font-family: 'Atkinson Hyperlegible', sans-serif;
     font-weight: 400;
 }
-  
+
 a {
     text-decoration: none;
     font-size: 18px;
     color: #060606;
 }
-  
+
 html {
     scroll-behavior: smooth;
 }
@@ -22,18 +22,23 @@ a {
     text-decoration: none;
 }
 
-main{
-    width: 95%;
-    max-width: 1100px;
-    margin-inline: auto;
+
+.container{
+    padding: 0px 80px;
 }
 
 h1{
-    font-size: 77px;
+    font-size: 67px;
     color: 151416;
+    font-family: 'Work Sans', sans-serif;
 }
 
+
 @media (max-width: 991px) {
+
+.container{
+    padding: 0px 20px;
+}
 
 h1{
     font-size: 32px;
