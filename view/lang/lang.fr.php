@@ -24,6 +24,7 @@ return [
 
     'rdv_title' => 'Prendre RDV',
     'rdv_button' => 'Prendre rendez-vous',
+    'vp_button' => 'Voir plus',
 
     'register_title' => 'Inscription',
     'signup_button' => "S'inscrire",
@@ -46,5 +47,9 @@ return [
     'nav_panier' => "Panier",
 
     'h2_prestations' => "Nos Services",
+    'service_subtitle'=> "Découvrez nos prestations de beauté",
+
+    'h2_gallery'=> "Nos réalisations",
+    'service_gallery'=> "Galerie",
 ];
 

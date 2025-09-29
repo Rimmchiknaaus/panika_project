@@ -22,6 +22,21 @@ VALUES (
     'admin'
 );
 
+INSERT INTO galerie (idCategorie, image) VALUES 
+(2, '/img/gallery_01.png'),
+(1, '/img/gallery_02.png'),
+(3, '/img/gallery_03.png'),
+(1, '/img/gallery_04.png'),
+(1, '/img/gallery_05.png'),
+(3, '/img/gallery_06.png'),
+(1, '/img/gallery_07.png'),
+(1, '/img/gallery_08.png'),
+(1, '/img/gallery_09.png'),
+(3, '/img/gallery_10.png'),
+(2, '/img/gallery_11.png'),
+(1, '/img/gallery_12.png')
+;
+
 -- Termine la transaction
 -- (si _toutes_ les commandes à l'interieur de la 'transaction' se sont bien passé, c'est parfait; sinon, tout est annulé. c'est très pratique !)
 COMMIT

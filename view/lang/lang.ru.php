@@ -24,6 +24,7 @@ return [
 
     'rdv_title' => 'Записаться',
     'rdv_button' => 'Записаться',
+    'vp_button' => 'Подробнее',
 
     'register_title' => 'Регистрация',
     'signup_button' => 'Зарегистрироваться',
@@ -45,5 +46,9 @@ return [
     'nav_panier' => "Корзина",
 
     'h2_prestations' => "Наши услуги",
+    'service_subtitle'=> " Познакомтесь с нашими процедурами",
+
+    'h2_gallery'=> "Галерея",
+    'service_gallery'=>  "Наши работы",
 ];
 

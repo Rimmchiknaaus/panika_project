@@ -60,10 +60,10 @@ CREATE TABLE rdv_prestation (
 
 CREATE TABLE galerie (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    idPrestation INT UNSIGNED NOT NULL,
+    idCategorie INT UNSIGNED NOT NULL,
     image VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (idPrestation) REFERENCES prestation(id)
+    FOREIGN KEY (idCategorie) REFERENCES categorie(id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE produit (

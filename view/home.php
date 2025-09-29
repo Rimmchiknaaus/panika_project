@@ -8,16 +8,18 @@
                 <div class="hero__text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </div>
-                <a class="btn__rdv" href="rdv.html">Prendre rendez-vous</a>
+                <div class="btn__group">
+                    <a class="btn__rdv" href="rdv.html"><?= $language['rdv_button']?></a>
+                </div>
             </div>
             <div class="hero__right">
                 <img src="/img/hero_1.png" alt="Espace de beauté PANIKA">
             </div>
 </section>
 <section class="services">
-            <div class="services__header">
-                <h2 class="services__title"><?= $language['h2_prestations']?></h2>
-                <h3 class="services__subtitle"> Découvrez nos prestations de beauté</h3>
+            <div class="section__header">
+                <h2 class="section__title"><?= $language['h2_prestations']?></h2>
+                <h3 class="section__subtitle"><?= $language['service_subtitle']?></h3>
             </div>
             <div class="services__list">
             <?php foreach ($args['listCategorie'] as $c){ ?>
@@ -26,18 +28,31 @@
                         <img src="<?= $c['image'] ?>" alt="<?= $c['libelle'] ?>">
                         <p class="service__text"  <?= $c['id'] ?>><?= $c['libelle'] ?>
                         </p>
-
                     </div>
-                    <?php } ?>
-
                 </div>
-                
+            <?php } ?>
             </div>
-            <div class="services__btn">
-                <a  href="services.html" class="btn__voirPlus">Voir plus</a>
+            <div class="btn__group">
+                <a  href="services.html" class="btn__voirPlus"><?= $language['vp_button']?></a>
                 <a  href="rdv.html" class="btn__rdv"><?= $language['rdv_button']?></a>         
             </div>
         </section>
+        <section class="gallery">
+            <div class="section__header">
+                <h2 class="section__title"><?= $language['h2_gallery']?></h2>
+                <h3 class="section__subtitle"><?= $language['service_gallery']?></h3>
+            </div>
+            <div class="gallery__grid">
+            <?php foreach ($args['listPhoto'] as $photo){ ?>
+                <div class="gallery__item">
+                    <img src="<?= $photo['image'] ?>" alt="<?= $photo['libelle'] ?>">
+                </div>
+                <?php } ?>
+            </div>
+            <div class="btn__group">
+            <a href="services.html" class="btn__voirPlus"><?= $language['vp_button']?></a>
+            </div>
+        </section>    
         <section id="contact">
         <h2><?=$language['contact_title']?></h2>
         <div id="map">

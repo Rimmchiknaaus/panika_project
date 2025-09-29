@@ -54,12 +54,17 @@
   
   &:hover{
     color: $smallTextGreyHover;
+    font-weight: bold;
   }
 }
 
 @media (max-width: 991px) {
-  .header { padding:10px 20px; }
-  .burger { display:block; }
+  .header { 
+    padding:10px 20px; 
+  }
+  .burger { 
+    display:block; 
+  }
 
   #main-nav {
     display:none;
