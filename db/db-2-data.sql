@@ -37,6 +37,11 @@ INSERT INTO galerie (idCategorie, image) VALUES
 (1, '/img/gallery_12.png')
 ;
 
+INSERT INTO prestation (idCategorie, fr_libelle, ru_libelle, prix, duree) VALUES 
+(2, 'Les ongles americains', '100$', '50')
+;
+
+
 -- Termine la transaction
 -- (si _toutes_ les commandes à l'interieur de la 'transaction' se sont bien passé, c'est parfait; sinon, tout est annulé. c'est très pratique !)
 COMMIT

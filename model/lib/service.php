@@ -11,73 +11,104 @@ use  App\Model\Lib\BDD as LibBdd;
 class Service
 {
 
-public static function getService(string $email) 
-    {
-        // Prépare la requête
-        $query = '  SELECT utilisateur.id, utilisateur.prenom, utilisateur.nom, utilisateur.email, utilisateur.phone, utilisateur.password, utilisateur.hashedPassword, utilisateur.role';
-        $query .= ' FROM utilisateur';
-        $query .= ' WHERE utilisateur.email = :email';
-        $statement = LibBdd::connect()->prepare($query);
-        $statement->bindParam(':email', $email);
+    public static function readAllPrestation(string $lang = 'fr'): array
+        {
+            $libelleCol = $lang . '_libelle';
 
-        $statement->execute();
-        $user = $statement->fetch(PDO::FETCH_ASSOC);
+            $query = "SELECT prestation.id, prestation.idCategorie, prestation.$libelleCol AS libelle, article.prix, article.duree, article.actif";
+            $query .= ' FROM prestation';
+            $query .= ' JOIN categorie ON prestation.idCategorie = categorie.id';
+            $statement = LibBdd::connect()->prepare($query);
+            $statement->execute();
+            return $statement->fetchAll(PDO::FETCH_ASSOC);
+        }
 
-        return $user;
+    public static function createPrestation($lang, $idCategorie, $libelle, $prix, $duree, $actif): bool
+        {
+            $libelleCol = $lang . '_libelle';
+
+            $query = "  INSERT INTO prestation(idCategorie, $libelleCol, prix, duree, actif) VALUES(:idCategorie, :libelle, :prix, :duree, :actif)";
+            $statement = LibBdd::connect()->prepare($query);
+            $statement->bindParam(':idCategorie', $idCategorie);
+            $statement->bindParam(':libelle', $libelle);
+            $statement->bindParam(':prix', $prix);
+            $statement->bindParam(':duree', $duree);
+            $statement->bindParam(':actif', $actif);
+
+            $successOrFailure = $statement->execute();
+
+            return $successOrFailure;
+        }   
+    
+    public static function updatePrestation($id, $lang, $libelle, $prix, $duree, $actif): bool
+        {
+            $libelleCol = $lang . '_libelle';
+            // Prépare la requête
+            // NOTE la requête a des paramètres !
+            // NOTE il faut utiliser 'bindParam' pour 'faire le lien' entre, par exemple, le 'paramètre nommé' ':label' dans la requête, et la variable passée en paramètre de la fonction $label
+            $query = "UPDATE prestation SET $libelleCol = :libelle, prix = :prix, duree = :duree, actif = :actif, WHERE id = :id";
+            $statement = LibBdd::connect()->prepare($query);
+            $statement->bindParam(':libelle', $libelle);
+            $statement->bindParam(':prix', $prix);
+            $statement->bindParam(':duree', $duree);
+            $statement->bindParam(':actif', $actif);
+            $statement->bindParam(':id', $id);
+
+        $successOrFailure = $statement->execute();
+
+        return $successOrFailure;
     }
 
-    public static function createService($idCategorie, $fr_libelle, $ru_libelle,  $prix, $duree, $actif): bool
-    {
-        $query = '  INSERT INTO prestation(idCategorie, fr_libelle, ru_libelle, prix, duree, actif) VALUES(:idCategorie, :fr_libelle, :ru_libelle, :prix, :duree, :actif)';
-        $statement = LibBdd::connect()->prepare($query);
-        $statement->bindParam(':idCategorie', $idCategorie);
-        $statement->bindParam(':fr_libelle', $fr_libelle);
-        $statement->bindParam(':ru_libelle', $ru_libelle);
-        $statement->bindParam(':prix', $prix);
-        $statement->bindParam(':duree', $duree);
-        $statement->bindParam(':actif', $actif);
+    public static function deletePrestation(int $id): bool
+        {
+            $db = LibBdd::connect(); 
+            $db->beginTransaction();
 
-        $successOrFailure = $statement->execute();
+            $query = 'DELETE FROM prestation WHERE id = :id';
+            $statement = $db->prepare($query);
+            $statement->bindParam(':id', $id);
+            $statement->execute();
 
-        return $successOrFailure;
-    }   
-    
-public static function updateUser($id, $prenom, $nom, $email, $phone,  $password, $hashedPassword): bool
+            $db->commit();
+            return true;
+    }
+    public static function getPrestation(int $id, string $lang = 'fr'): ?array
     {
-        // Prépare la requête
-        // NOTE la requête a des paramètres !
-        // NOTE il faut utiliser 'bindParam' pour 'faire le lien' entre, par exemple, le 'paramètre nommé' ':label' dans la requête, et la variable passée en paramètre de la fonction $label
-        $query = '  UPDATE utilisateur';
-        $query.= '  SET';
-        $query.= '  utilisateur.prenom = :prenom';
-        $query.= '  ,utilisateur.nom = :nom';
-        $query.= '  ,utilisateur.email = :email';
-        $query.= '  ,utilisateur.phone = :phone';
-        $query.= '  ,utilisateur.password = :password';
-        $query.= '  ,utilisateur.hashedPassword = :hashedPassword';
-        $query.= '  WHERE utilisateur.id = :id';
+        $libelleCol = $lang . '_libelle';
+
+        $query =  "SELECT prestation.id, prestation.idCategorie, prestation.$libelleCol AS libelle, prestation.prix, prestation.duree, prestation.actif";
+        $query .= ' FROM prestation';
+        $query .= ' JOIN categorie ON prestation.idCategorie = categorie.id';
+        $query .= ' WHERE article.id = :id';
         $statement = LibBdd::connect()->prepare($query);
         $statement->bindParam(':id', $id);
-        $statement->bindParam(':prenom', $prenom);
-        $statement->bindParam(':nom', $nom);
-        $statement->bindParam(':email', $email);
-        $statement->bindParam(':phone', $phone);
-        $statement->bindParam(':password', $password);
-        $statement->bindParam(':hashedPassword', $hashedPassword);
+        $statement->execute();
 
-        $successOrFailure = $statement->execute();
+        $article = $statement->fetch(PDO::FETCH_ASSOC);
+        return $article;
+    }
+    public static function getPrestationByCategorie($idCategorie, string $lang = 'fr'): array
+    {
+        $libelleCol = $lang . '_libelle';
 
-        return $successOrFailure;
-}
+        $query = "SELECT prestation.id, prestation.idCategorie, prestation.$libelleCol AS libelle, prestation.prix, prestation.duree, prestation.actif";
+        $query .= ' FROM prestation';
+        $query .= ' JOIN categorie ON prestation.idCategorie = categorie.id';
+        $query .= ' WHERE prestation.idCategorie = :idCategorie';
+        $statement = LibBdd::connect()->prepare($query);
+        $statement->bindParam(':idCategorie', $idCategorie, PDO::PARAM_INT);
+        $statement->execute();
 
-public static function readAllCategorie(string $lang = 'fr'): ?array
-{
-    $libelleCol = $lang . '_libelle';
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 
-    $query = "SELECT categorie.id, categorie.image, categorie.$libelleCol AS libelle 
-    FROM categorie";
-    $statement = LibBdd::connect()->prepare($query);
-    $statement->execute();
-    return $statement->fetchAll(PDO::FETCH_ASSOC);
-}
+    public static function readAllCategorie(string $lang = 'fr'): ?array
+        {
+            $libelleCol = $lang . '_libelle';
+
+            $query = "SELECT categorie.id, categorie.image, categorie.$libelleCol AS libelle FROM categorie";
+            $statement = LibBdd::connect()->prepare($query);
+            $statement->execute();
+            return $statement->fetchAll(PDO::FETCH_ASSOC);
+        }
 }

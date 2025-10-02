@@ -32,7 +32,7 @@ class prestationList extends Ctrl
         $duree =  $_POST['duree'];
         $actif = isset($_POST['actif']) ? 1 : 0;
 
-        LibService::createService($idCategorie, $fr_libelle, $ru_libelle,  $prix, $duree, $actif);
+        LibService::createPrestation($idCategorie, $fr_libelle, $ru_libelle,  $prix, $duree, $actif);
 
         $this->redirectTo('/ctrl/prestation-list.php');
     }

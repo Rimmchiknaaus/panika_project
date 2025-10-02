@@ -62,12 +62,12 @@
             <p>1110 Avenue de la 2éme Division Blindée,<br>Les Angles (30133)</p>
 
             <p>
-                <img src="src/public/icons/phone.svg" alt="Phone" class="contacts__icon">
+                <i class="fa-solid fa-phone"></i>
                 <a href="tel:+33766530044">+33 7 66 53 00 44</a>
             </p>
 
             <p>
-                <img src="src/public/icons/instagram.svg" alt="Instagram" class="contacts__icon">
+                <i class="fa-brands fa-square-instagram"></i>
                 <a href="https://www.instagram.com/panika_espace_de_beaute/" target="_blank">@panika_espace_de_beaute</a>
             </p>
             </div>
