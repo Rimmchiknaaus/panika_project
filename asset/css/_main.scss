@@ -161,4 +161,21 @@ img{
     padding: 40px 0px;
     &__content{
       flex-direction: row;
-      justify-content: space
+      justify-content: space-between;
+
+    }
+    .contacts__info{ 
+      flex: 0 0 30%;
+      font-size: 20px;
+      a{
+        font-size: 20px;
+      }
+    }
+    .contacts__map { 
+      min-height: 320px; 
+      flex: 0 0 70%;
+    }
+  }
+}
+
+  
