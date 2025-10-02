@@ -11,7 +11,6 @@
         <?php unset($_SESSION['msg']); ?>
     </div>
 <?php endif; ?>
-
 <form method="POST" action="/ctrl/login.php">
     <input type="email" name="email" placeholder="Email" required><br>
     <input type="password" name="password" placeholder="Mot de passe" required><br>

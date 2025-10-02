@@ -1,6 +1,3 @@
-<?php
-
-?>
 <main>
 <section class="hero">
             <div class="hero__left">            
@@ -53,19 +50,33 @@
             <a href="services.html" class="btn__voirPlus"><?= $language['vp_button']?></a>
             </div>
         </section>    
-        <section id="contact">
-        <h2><?=$language['contact_title']?></h2>
-        <div id="map">
-    <script>
-            var map = L.map('map').setView([43.33205, 5.35000], 5);
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            }).addTo(map);
+    <!-- CONTACTS -->
+    <section class="contacts">
+        <div class="section__header">
+            <h2 class="section__title"><?=$language['contact_title']?></h2>
+            <p class="section__subtitle"><?=$language['contact_subtitle']?></p>
+        </div>
 
-            var marker = L.marker([42.641653, 8.9381714]).addTo(map);
-            marker.bindPopup("<strong>[PORT] IRS</strong> - Port de Ile Rousse");
-        </script>
-    </div>
-    </section>
+        <div class="contacts__content">
+            <div class="contacts__info">
+            <p>1110 Avenue de la 2éme Division Blindée,<br>Les Angles (30133)</p>
+
+            <p>
+                <img src="src/public/icons/phone.svg" alt="Phone" class="contacts__icon">
+                <a href="tel:+33766530044">+33 7 66 53 00 44</a>
+            </p>
+
+            <p>
+                <img src="src/public/icons/instagram.svg" alt="Instagram" class="contacts__icon">
+                <a href="https://www.instagram.com/panika_espace_de_beaute/" target="_blank">@panika_espace_de_beaute</a>
+            </p>
+            </div>
+
+            <div class="contacts__map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.525210751126!2d4.760387!3d43.951129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b5ef49fdfc5d41%3A0x2a59a5c43db2db02!2sLes%20Angles%2030133!5e0!3m2!1sfr!2sfr!4v0000000000000"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        </section>
 </main>

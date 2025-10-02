@@ -24,7 +24,13 @@ a {
 
 
 .container{
-    padding: 0px 80px;
+    padding: 20px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
 }
 
 h1{
@@ -32,12 +38,14 @@ h1{
     color: 151416;
     font-family: 'Work Sans', sans-serif;
 }
-
+section{    
+    padding: 20px 0px;
+}
 
 @media (max-width: 991px) {
 
 .container{
-    padding: 0px 20px;
+    padding: 20px;
 }
 
 h1{
@@ -45,11 +53,8 @@ h1{
     }
 }
 section{    
-    padding: 20px 0px;
     text-align: center;
-  }
-
-
+}
 
 .section__title{
     font-family: 'Work Sans', sans-serif;
@@ -73,5 +78,15 @@ section{
     .section__subtitle{
         font-size: 32px;
         margin-bottom: 20px;
+    }
+}
+
+footer{
+    margin-top: auto;
+}
+
+@media (min-width: 1200px) {
+    section {
+        margin: 100px auto;
     }
 }

@@ -27,7 +27,13 @@ a {
 }
 
 .container {
-  padding: 0px 80px;
+  padding: 20px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 h1 {
@@ -36,16 +42,19 @@ h1 {
   font-family: "Work Sans", sans-serif;
 }
 
+section {
+  padding: 20px 0px;
+}
+
 @media (max-width: 991px) {
   .container {
-    padding: 0px 20px;
+    padding: 20px;
   }
   h1 {
     font-size: 32px;
   }
 }
 section {
-  padding: 20px 0px;
   text-align: center;
 }
 
@@ -73,6 +82,15 @@ section {
   .section__subtitle {
     font-size: 32px;
     margin-bottom: 20px;
+  }
+}
+footer {
+  margin-top: auto;
+}
+
+@media (min-width: 1200px) {
+  section {
+    margin: 100px auto;
   }
 }
 /* HERO */
@@ -135,7 +153,7 @@ section {
 }
 .services__list .service__card .service__img img {
   width: 100%;
-  min-height: auto;
+  height: 400px;
   border-radius: 8px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -159,16 +177,15 @@ section {
     flex-wrap: wrap;
   }
   .services__list .service__img img {
-    height: 280px;
+    width: 280px;
   }
 }
 @media (min-width: 1200px) {
   .services {
-    margin: 100px auto;
     padding: 40px;
   }
-  .services .service__img img {
-    min-height: 320px;
+  .services .service__card {
+    max-width: 380px;
   }
   .services .service__text {
     font-size: 20px;
@@ -178,7 +195,6 @@ section {
 .gallery__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
 }
 
 .gallery__item {
@@ -196,23 +212,49 @@ section {
 @media (min-width: 768px) {
   .gallery__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
   }
   .gallery__item img {
     width: 335px;
   }
 }
 @media (min-width: 1200px) {
+  .gallery {
+    padding: 40px 0px;
+  }
   .gallery__grid {
     grid-template-columns: repeat(4, 1fr);
   }
   .gallery__item img {
-    width: 280px;
+    width: 240px;
+  }
+}
+.contacts__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contacts .contacts__map {
+  min-height: 280px;
+}
+
+@media (min-width: 1200px) {
+  .contacts {
+    padding: 40px 120px;
+  }
+  .contacts__content {
+    flex-direction: row;
+  }
+  .contacts .contacts__info {
+    flex: 0 0 30%;
+  }
+  .contacts .contacts__map {
+    min-height: 320px;
+    flex: 0 0 70%;
   }
 }
 .header {
   background: #FFFFFF;
-  padding: 10px 0px;
+  padding: 20px 0px;
   position: relative;
   z-index: 1000;
 }

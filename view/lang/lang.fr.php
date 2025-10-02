@@ -51,5 +51,8 @@ return [
 
     'h2_gallery'=> "Nos réalisations",
     'service_gallery'=> "Galerie",
+
+    'contact_title'=> "Contacts",
+    'contact_subtitle'=> "Où nous trouver",
 ];
 
