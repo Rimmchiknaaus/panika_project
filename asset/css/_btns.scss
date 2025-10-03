@@ -29,6 +29,30 @@
     color: #DDDBD9;
 }
 
+.btn__admin{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    &_item{
+        background: $orangeClaire;
+        color: $orangeDark;
+        padding: 8px 32px;
+        border: 1px solid $orangeDark;
+        border-radius: 22px;
+        text-align: center;
+        font-weight:600;
+        font-size: 16px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        &:hover{
+            border: none;
+            background: $orangeNormal;
+            color: $orangeClaire;
+        }
+    }
+}
+
+
+
 @media (min-width: 768px) {
 
     .btn__group {
@@ -39,7 +63,6 @@
             padding: 12px 24px;
         }
     }
-
 }
 
 

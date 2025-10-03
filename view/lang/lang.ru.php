@@ -50,5 +50,8 @@ return [
 
     'h2_gallery'=> "Галерея",
     'service_gallery'=>  "Наши работы",
+
+    'prestation-update_btn'   => "Изменить",
+    'prestation-delete_btn'   => "Удалить",
 ];
 

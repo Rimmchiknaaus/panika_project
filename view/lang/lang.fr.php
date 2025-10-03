@@ -54,5 +54,8 @@ return [
 
     'contact_title'=> "Contacts",
     'contact_subtitle'=> "Où nous trouver",
+
+    'prestation-update_btn'   => "Modifier",
+    'prestation-delete_btn'   => "Supprimer",
 ];
 
