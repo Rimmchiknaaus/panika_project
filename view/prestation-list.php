@@ -20,7 +20,7 @@
                             <div class="prestation__card">
                                 <div class="prestation">
                                     <div class="prestation__description">
-                                        <p class="prestation__text"><?= $p['libelle'] ?></p>
+                                        <a href="#" class="prestation__text"><?= $p['libelle'] ?></a>
                                         <p class="prestation__duree"><?= $p['duree'] ?>min</p>
                                     </div>
                                     <div class="prestation__prix">

@@ -404,7 +404,8 @@ footer {
 
 .btn__admin {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
   padding: 10px 0px;
 }
 .btn__admin_item {
@@ -467,7 +468,7 @@ footer {
   padding-bottom: 10px;
   color: #252224;
 }
-.categorie p {
+.categorie p, .categorie a {
   text-align: left;
   font-size: 16px;
   color: #6E6C71;
