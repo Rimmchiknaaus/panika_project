@@ -44,32 +44,32 @@ section{
 
 @media (max-width: 991px) {
 
-.container{
-    padding: 20px;
-}
-
-h1{
-    font-size: 32px;
+    .container{
+        padding: 20px;
     }
-}
-section{    
-    text-align: center;
-}
 
-.section__title{
-    font-family: 'Work Sans', sans-serif;
-    color: $smallTextGreyClaire;
-    font-weight: 400;
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-.section__subtitle{
-    font-family: 'Work Sans', sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    color: $sectionTitle;
-    margin-bottom: 16px;
-}
+    h1{
+        font-size: 32px;
+        }
+    }
+    section{    
+        text-align: center;
+    }
+
+    .section__title{
+        font-family: 'Work Sans', sans-serif;
+        color: $smallTextGreyClaire;
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    .section__subtitle{
+        font-family: 'Work Sans', sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        color: $sectionTitle;
+        margin-bottom: 16px;
+    }
 @media (min-width: 768px) {
     .section__title{
         font-size: 18px;
@@ -83,10 +83,4 @@ section{
 
 footer{
     margin-top: auto;
-}
-
-@media (min-width: 1200px) {
-    section {
-        margin: 100px auto;
-    }
 }

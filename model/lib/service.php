@@ -23,21 +23,19 @@ class Service
             return $statement->fetchAll(PDO::FETCH_ASSOC);
         }
 
-    public static function createPrestation($lang, $idCategorie, $libelle, $prix, $duree, $actif): bool
+        public static function createPrestation($idCategorie, $frLibelle, $ruLibelle, $prix, $duree, $actif): bool
         {
-            $libelleCol = $lang . '_libelle';
-
-            $query = "  INSERT INTO prestation(idCategorie, $libelleCol, prix, duree, actif) VALUES(:idCategorie, :libelle, :prix, :duree, :actif)";
+            $query = "INSERT INTO prestation (idCategorie, fr_libelle, ru_libelle, prix, duree, actif) VALUES (:idCategorie, :frLibelle, :ruLibelle, :prix, :duree, :actif)";
+            
             $statement = LibBdd::connect()->prepare($query);
             $statement->bindParam(':idCategorie', $idCategorie);
-            $statement->bindParam(':libelle', $libelle);
+            $statement->bindParam(':frLibelle', $frLibelle);
+            $statement->bindParam(':ruLibelle', $ruLibelle);
             $statement->bindParam(':prix', $prix);
             $statement->bindParam(':duree', $duree);
             $statement->bindParam(':actif', $actif);
-
-            $successOrFailure = $statement->execute();
-
-            return $successOrFailure;
+        
+            return $statement->execute();
         }   
     
     public static function updatePrestation($id, $lang, $libelle, $prix, $duree, $actif): bool

@@ -1,21 +1,31 @@
-<form method="POST" action="/ctrl/prestation-add.php">
-    <input type="text" name="fr_libelle" placeholder="<?= $language['prestation_fr_libelle'] ?>"><br>
+<section>
+<div class="section__header">
+                <h2 class="section__title"><?= $language['prestation-add']?></h2>
+            </div>
+    <form class="form"method="POST" action="/ctrl/prestation-add.php">
+            <input class="form__item" type="text" name="fr_libelle" placeholder="<?= $language['prestation_fr_libelle'] ?>"><br>
 
-    <input type="text" name="ru_libelle" placeholder="<?= $language['prestation_ru_libelle'] ?>"><br>
+            <input class="form__item" type="text" name="ru_libelle" placeholder="<?= $language['prestation_ru_libelle'] ?>"><br>
 
-    <select name="idCategorie" placeholder="<?= $language['categorie'] ?>">
-    <?php foreach ($args['listCategorie'] as $c){ ?>
-        <option <?= $c['id'] ?>><?= $c['libelle'] ?></option>
-        <?php } ?>
+            <select class="form__item" name="idCategorie" placeholder="<?= $language['categorie'] ?>">
+            <?php foreach ($args['listCategorie'] as $c){ ?>
+                <option value="<?= $c['id'] ?>"><?= $c['libelle'] ?></option>
+                <?php } ?>
 
-    </select><br>
+            </select><br>
 
-    <input type="number" step="0.01" name="prix"  placeholder="<?= $language['prix'] ?>"><br>
+            <input class="form__item" type="number" step="0.01" name="prix"  placeholder="<?= $language['prix'] ?>"><br>
 
 
-    <input type="number" name="duree"  placeholder="<?= $language['duree'] ?>"><br>
-
-    <input type="checkbox" name="actif" value="1" checked  placeholder="<?= $language['actif'] ?>"><br>
-
-    <button type="submit"><?= $language['add_btn'] ?></button>
-</form>
+            <input class="form__item" type="number" name="duree"  placeholder="<?= $language['duree'] ?>"><br>
+                <div class="form__checkbox">
+                    <label for="actif"><?= $language['actif'] ?></label>
+                    <input class="form__item" type="checkbox" name="actif" value="1" checked>
+                </div>
+            <div class="btn__admin">
+                <button class="btn__admin_item" type="submit"><?= $language['add_btn'] ?></button>
+                <a href="/ctrl/prestation-list.php?id=<?= $p['id'] ?>&lang=<?= $lang ?>" class="btn__admin_item" type="submit"><?= $language['annuler_btn'] ?></a>
+            </div>
+        </form>
+</section>
+        

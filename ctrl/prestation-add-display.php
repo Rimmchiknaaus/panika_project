@@ -26,6 +26,9 @@ class prestationAddDisplay extends Ctrl
     public function do(): void
     {
 
+        $lang = $_GET['lang'] ?? 'fr';
+        require $_SERVER['DOCUMENT_ROOT'] . "/view/lang/lang.$lang.php";
+        
         $listCategorie = LibService::readAllCategorie();
         $this->addViewArg('listCategorie', $listCategorie);
     }

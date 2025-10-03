@@ -30,9 +30,9 @@ return [
     'signup_button' => 'Зарегистрироваться',
     'nav_services' => "Услуги",
 
-    'prestation-add_btn' => "Добавить услугу", 
+    'prestation-add' => "Добавить процедуру", 
 
-    'prestation_add_title'   => "Добавить услугу",
+    'prestation_add_title'   => "Добавить процедуру",
     'prestation_fr_libelle'  => "Название (FR)",
     'prestation_ru_libelle'  => "Название (RU)",
     'categorie'   => "Категория",
@@ -40,6 +40,7 @@ return [
     'duree'       => "Длительность (минуты)",
     'actif'       => "Активна",
     'add_btn'     => "Добавить",
+    'annuler_btn'   => "Сбросить",
     'nav_shop' => "Shop",
     'nav_galerie' => "Галерея",
     'nav_avis' => "Отзывы",
@@ -49,9 +50,4 @@ return [
     'service_subtitle'=> " Познакомтесь с нашими процедурами",
 
     'h2_gallery'=> "Галерея",
-    'service_gallery'=>  "Наши работы",
-
-    'prestation-update_btn'   => "Изменить",
-    'prestation-delete_btn'   => "Удалить",
-];
-
+   

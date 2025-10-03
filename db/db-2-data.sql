@@ -38,7 +38,7 @@ INSERT INTO galerie (idCategorie, image) VALUES
 ;
 
 INSERT INTO prestation (idCategorie, fr_libelle, ru_libelle, prix, duree) VALUES 
-(2, 'Les ongles americains', '100$', '50')
+(1, 'Les ongles americains', 'Американское наращивание', '100$', '50')
 ;
 
 

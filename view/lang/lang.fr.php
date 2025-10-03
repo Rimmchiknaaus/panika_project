@@ -30,7 +30,7 @@ return [
     'signup_button' => "S'inscrire",
     'nav_services' => "Prestations",
 
-    'prestation-add_btn' => "Ajouter une prestation",
+    'prestation-add' => "Ajouter une prestation",
 
 
     'prestation_add_title'   => "Ajouter une prestation",
@@ -40,7 +40,8 @@ return [
     'prix'        => "Prix (€)",
     'duree'       => "Durée (minutes)",
     'actif'       => "Active",
-    'add_btn'     => "Ajouter",
+    'add_btn'     => "Enregistrer",
+    'annuler_btn'   => "Annuler",
     'nav_shop' => "Shop",
     'nav_galerie' => "Galerie",
     'nav_avis' => "Avis",
@@ -53,9 +54,4 @@ return [
     'service_gallery'=> "Galerie",
 
     'contact_title'=> "Contacts",
-    'contact_subtitle'=> "Où nous trouver",
-
-    'prestation-update_btn'   => "Modifier",
-    'prestation-delete_btn'   => "Supprimer",
-];
-
+    'contact_su

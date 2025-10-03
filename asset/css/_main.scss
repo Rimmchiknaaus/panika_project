@@ -47,7 +47,8 @@ img{
       flex-direction: column;
       gap: 20px;
       .service__card {
-        max-width: 400px;
+        width: 335px;
+        height: 400px;    
         margin: 0 auto;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         &:hover {
@@ -56,7 +57,7 @@ img{
         }
         .service__img img {
           width: 100%;
-          height: 400px;     
+          height: auto;     
           border-radius: 8px;
           object-fit: cover;
           margin-bottom: 15px;
@@ -80,9 +81,13 @@ img{
       &__list {
         flex-direction: row;
         flex-wrap: wrap;
-        .service__img img {
-          width: 280px;
-        }  
+        .service__card{
+          flex: 0 0 40%;
+          .service__img img {
+            height: 320px;
+          }  
+        }
+
       }
     }
   }
@@ -90,9 +95,11 @@ img{
   @media (min-width: 1200px) {
     
     .services {
-      padding: 40px;
         .service__card {
-          max-width: 380px;  
+          flex: 0 0 30%;
+          .service__img img {
+            height: 280px;
+          }  
         }
         .service__text {
           font-size: 20px;

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $args['pageTitle'] ?? $pageTitle ?? '' ?></title>
     <link rel="stylesheet" href="/asset/css/style.css">
-        <link rel="stylesheet" href="/asset/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/node_modules/leaflet/dist/leaflet.css">
     <script src="/node_modules/leaflet/dist/leaflet.js"></script>
