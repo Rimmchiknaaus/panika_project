@@ -54,5 +54,7 @@ return [
 
     'prestation-update_btn'   => "Изменить",
     'prestation-delete_btn'   => "Удалить",
+
+    'prestation-update'   => "Редактировать процедуру",
 ];
 

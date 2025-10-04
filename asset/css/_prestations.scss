@@ -2,6 +2,8 @@
     &__card{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding-bottom: 10px;
     }
     .prestation__card{
@@ -10,7 +12,7 @@
     }
     .categorie__libelle{
         text-align: left;
-        font-size: 24px;
+        font-size: 20px;
         color: $sectionTitle;
     }
 
@@ -24,7 +26,7 @@
         img{
             object-fit: cover;
             width: 100%;
-            min-height: 400px;
+            height: 360px;
         }
     }
 }
@@ -49,14 +51,17 @@
         &__card{
             display: flex;
             flex-direction: row-reverse;
-            justify-content: space-between;
+            gap: 20px;
+            justify-content: left;
+            align-items: start;
+            padding: 20px 0px;
         }
         .categorie__libelle{
             font-size: 30px;
             padding-bottom: 20px;
         }
         .prestation__list{
-            flex: 0 0 40%;
+            flex: 0 0 50%;
         }
         &__img{
             flex: 0 0 50%;

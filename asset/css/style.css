@@ -457,6 +457,8 @@ footer {
 .categorie__card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-bottom: 10px;
 }
 .categorie .prestation__card {
@@ -465,7 +467,7 @@ footer {
 }
 .categorie .categorie__libelle {
   text-align: left;
-  font-size: 24px;
+  font-size: 20px;
   color: #252224;
 }
 .categorie p, .categorie a {
@@ -480,7 +482,7 @@ footer {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  min-height: 400px;
+  height: 360px;
 }
 
 .form {
@@ -500,14 +502,17 @@ footer {
   .categorie__card {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    gap: 20px;
+    justify-content: left;
+    align-items: start;
+    padding: 20px 0px;
   }
   .categorie .categorie__libelle {
     font-size: 30px;
     padding-bottom: 20px;
   }
   .categorie .prestation__list {
-    flex: 0 0 40%;
+    flex: 0 0 50%;
   }
   .categorie__img {
     flex: 0 0 50%;

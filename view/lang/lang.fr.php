@@ -59,5 +59,7 @@ return [
     'prestation-update_btn'   => "Modifier",
     'prestation-delete_btn'   => "Supprimer",
 
+    'prestation-update'   => "Modifier prestation",
+
 ];
 
