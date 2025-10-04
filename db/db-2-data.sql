@@ -41,6 +41,12 @@ INSERT INTO prestation (idCategorie, fr_libelle, ru_libelle, prix, duree) VALUES
 (1, 'Les ongles americains', 'Американское наращивание', '100$', '50')
 ;
 
+INSERT INTO prestataire (prenom, idCategorie) VALUES 
+('Olha', 1),
+('Alina', 2),
+('Irina', 3)
+;
+
 
 -- Termine la transaction
 -- (si _toutes_ les commandes à l'interieur de la 'transaction' se sont bien passé, c'est parfait; sinon, tout est annulé. c'est très pratique !)
