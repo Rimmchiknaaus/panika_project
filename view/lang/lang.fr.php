@@ -54,4 +54,10 @@ return [
     'service_gallery'=> "Galerie",
 
     'contact_title'=> "Contacts",
-    'contact_su
+    'contact_subtitle'=> "Où nous trouver",
+
+    'prestation-update_btn'   => "Modifier",
+    'prestation-delete_btn'   => "Supprimer",
+
+];
+

@@ -37,8 +37,8 @@ main {
 }
 
 h1 {
-  font-size: 67px;
-  color: 151416;
+  font-size: 60px;
+  color: #151416;
   font-family: "Work Sans", sans-serif;
 }
 
@@ -93,13 +93,16 @@ footer {
   display: flex;
   gap: 20px;
   text-align: left;
-  padding: 20px 0px;
+  padding: 20px 0px 40px 0px;
 }
 .hero__left {
-  flex: 1 1 35%;
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .hero_right {
-  flex: 1 1 65%;
+  flex: 1 1 60%;
   min-height: auto;
 }
 .hero img {
@@ -110,11 +113,9 @@ footer {
 }
 .hero__title {
   font-weight: 600;
-  margin-bottom: 20px;
 }
 .hero__text {
   font-size: 18px;
-  margin-bottom: 40px;
 }
 
 @media (max-width: 991px) {
@@ -135,12 +136,11 @@ footer {
 .services__list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 .services__list .service__card {
   width: 335px;
-  height: 400px;
-  margin: 0 auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .services__list .service__card:hover {
@@ -149,7 +149,7 @@ footer {
 }
 .services__list .service__card .service__img img {
   width: 100%;
-  height: auto;
+  height: 400px;
   border-radius: 8px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -165,11 +165,9 @@ footer {
 }
 
 @media (min-width: 768px) {
-  .services {
-    padding: 40px 20px;
-  }
   .services__list {
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
   }
   .services__list .service__card {

@@ -50,4 +50,9 @@ return [
     'service_subtitle'=> " Познакомтесь с нашими процедурами",
 
     'h2_gallery'=> "Галерея",
-   
+    'service_gallery'=>  "Наши работы",
+
+    'prestation-update_btn'   => "Изменить",
+    'prestation-delete_btn'   => "Удалить",
+];
+
