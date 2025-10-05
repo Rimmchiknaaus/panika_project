@@ -2,9 +2,10 @@
     background-color:$lowBGC;
     color: $smallTextGrey;
     text-align: center;
-    padding: 20px;
+    margin-left: -80px;
+    margin-right: -80px;
+    padding: 20px 80px;
     font-size: 14px;
-    margin-top: auto;
     display: flex;
     justify-content: center;
 }

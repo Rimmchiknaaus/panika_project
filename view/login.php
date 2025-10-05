@@ -1,18 +1,21 @@
-
-<h2><?= $language['nav_login'] ?></h2>
-
-<?php if (!empty($_SESSION['msg'])): ?>
-    <div>
-        <?php foreach ($_SESSION['msg'] as $type => $message): ?>
-            <p style="color: <?= $type === 'success' ? 'green' : 'red' ?>">
-                <?= $message ?>
-            </p>
-        <?php endforeach; ?>
-        <?php unset($_SESSION['msg']); ?>
+<section>
+    <div class="section__header">
+    <h2 class="section__title"><?= $language['nav_login'] ?></h2>
     </div>
-<?php endif; ?>
-<form method="POST" action="/ctrl/login.php">
-    <input type="email" name="email" placeholder="Email" required><br>
-    <input type="password" name="password" placeholder="Mot de passe" required><br>
-    <button type="submit"><?= $language['nav_signup'] ?></button>
-</form>
+    <form class="form"  method="POST" action="/ctrl/login.php">
+        <input  class="form__item" type="email" name="email" placeholder="Email" required><br>
+        <div class="pass__group">
+            <input  class="form__item" type="password" name="password" placeholder="<?= $language['label_password'] ?>" required><br>
+            <button type="button" onclick="togglePassword('myPasswordRepeat')">👁</button>
+        </div>
+        <div class="btn__group">
+            <button class="btn__rdv" type="submit"><?= $language['nav_signup'] ?></button>
+        </div>
+    </form>
+</section>
+<script>
+function togglePassword(id) {
+    const field = document.getElementById(id);
+    field.type = field.type === 'password' ? 'text' : 'password';
+}
+</script>

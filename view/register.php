@@ -1,39 +1,29 @@
-<h2><?= $language['register_title'] ?></h2>
-
-<?php if (!empty($_SESSION['msg'])): ?>
-    <div>
-        <?php foreach ($_SESSION['msg'] as $type => $message): ?>
-            <p style="color: <?= $type === 'success' ? 'green' : 'red' ?>">
-                <?= htmlspecialchars($message) ?>
-            </p>
-        <?php endforeach; ?>
-        <?php unset($_SESSION['msg']); ?>
+<section>
+    <div class="section__header">
+        <h2 class="section__title"><?= $language['register_title'] ?></h2>
     </div>
-<?php endif; ?>
 
-<form method="POST" action="/ctrl/register.php">
-    <label><?= $language['label_firstname'] ?> :</label><br>
-    <input type="text" name="myName" required><br><br>
+    <form class="form" method="POST" action="/ctrl/register.php">
+        <input class="form__item" type="text" name="myName" placeholder="<?= $language['label_firstname']?>"required><br>
+        <input class="form__item" type="text" name="myFirstname" placeholder="<?= $language['label_lastname']?>" required><br>
 
-    <label><?= $language['label_lastname'] ?> :</label><br>
-    <input type="text" name="myFirstname" required><br><br>
+        <input class="form__item" type="email" name="myEmail" placeholder="Email" required><br>
+        <input class="form__item" type="tel" name="myPhone" pattern="[0-9]{10}" placeholder="<?= $language['label_phone'] ?>" required><br>
 
-    <label>Email :</label><br>
-    <input type="email" name="myEmail" required><br><br>
-
-    <label><?= $language['label_phone'] ?> :</label><br>
-    <input type="tel" name="myPhone" pattern="[0-9]{10}" placeholder="0601020304" required><br><br>
-
-    <label><?= $language['label_new_password'] ?> :</label><br>
-    <input type="password" name="myPassword" id="myPassword" required>
-    <button type="button" onclick="togglePassword('myPassword')">👁</button><br><br>
-
-    <label><?= $language['label_confirm_password'] ?> :</label><br>
-    <input type="password" name="myPasswordRepeat" id="myPasswordRepeat" required>
-    <button type="button" onclick="togglePassword('myPasswordRepeat')">👁</button><br><br>
-
-    <button type="submit"><?= $language['signup_button'] ?></button>
-</form>
+        <div class="pass__group">
+            <input class="form__item" type="password" name="myPassword" id="myPassword" placeholder="<?= $language['label_new_password'] ?>" required>
+            <button type="button" onclick="togglePassword('myPassword')">👁</button><br>
+        </div>
+        <br>
+        <div class="pass__group">
+            <input class="form__item" type="password" name="myPasswordRepeat" id="myPasswordRepeat" placeholder="<?= $language['label_confirm_password'] ?>"required>
+            <button type="button" onclick="togglePassword('myPasswordRepeat')">👁</button>
+        </div>
+        <div class="btn__group">
+            <button class="btn__rdv" type="submit"><?= $language['signup_button'] ?></button>
+        </div>
+    </form>
+</section>
 
 <script>
 function togglePassword(id) {

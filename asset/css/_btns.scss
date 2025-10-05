@@ -52,6 +52,17 @@
     }
 }
 
+.pass__group{
+    display: flex;
+
+    input{
+        width: 100%;
+    }
+    button{
+        padding: 0px 12px;
+    }
+}
+
 
 
 @media (min-width: 768px) {

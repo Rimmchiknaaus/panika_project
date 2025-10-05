@@ -39,15 +39,14 @@
                 <h2 class="section__title"><?= $language['h2_gallery']?></h2>
                 <h3 class="section__subtitle"><?= $language['service_gallery']?></h3>
             </div>
-            <div class="gallery__grid">
-            <?php foreach ($args['listPhoto'] as $photo){ ?>
-                <div class="gallery__item">
-                    <img src="<?= $photo['image'] ?>" alt="<?= $photo['libelle'] ?>">
+                <div class="gallery-slider">
+                    <?php foreach ($args['listPhoto'] as $index => $photo){ ?>
+                        <img src="<?= $photo['image'] ?>" alt="<?= $photo['libelle'] ?>" class="slide <?= $index === 0 ? 'active' : '' ?>">
+                    <?php } ?>
                 </div>
-                <?php } ?>
-            </div>
-            <div class="btn__group">
-            <a href="services.html" class="btn__voirPlus"><?= $language['vp_button']?></a>
+                <div class="btn__group">
+                    <a href="services.html" class="btn__voirPlus"><?= $language['vp_button']?></a>
+                </div>
             </div>
         </section>    
     <!-- CONTACTS -->
@@ -80,3 +79,16 @@
         </div>
         </section>
 </main>
+
+<script>
+let slides = document.querySelectorAll('.gallery-slider img');
+let currentIndex = 0;
+
+function showNextSlide() {
+  slides[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % slides.length;
+  slides[currentIndex].classList.add('active');
+}
+
+setInterval(showNextSlide, 3000); // каждые 3 секунды
+</script>

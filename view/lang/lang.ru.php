@@ -16,6 +16,7 @@ return [
     'label_phone' => 'Телефон',
     'change_password' => 'Сменить пароль',
     'label_new_password' => 'Новый пароль',
+    'label_password' => 'Пароль',
     'label_confirm_password' => 'Подтвердите пароль',
     'save_changes' => 'Сохранить изменения',
 
@@ -51,6 +52,10 @@ return [
 
     'h2_gallery'=> "Галерея",
     'service_gallery'=>  "Наши работы",
+
+
+
+    'contact_subtitle'=> "Как нас найти",
 
     'prestation-update_btn'   => "Изменить",
     'prestation-delete_btn'   => "Удалить",

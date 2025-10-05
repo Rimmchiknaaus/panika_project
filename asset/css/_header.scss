@@ -1,6 +1,7 @@
 .header {
-  background:#FFFFFF;
-  padding:20px 0px;
+  background:#fcfcfc;
+  margin: 0px -80px;
+  padding: 20px 80px;
   position:relative;
   z-index:1000;
 }
@@ -60,6 +61,7 @@
 
 @media (max-width: 991px) {
   .header { 
+    margin: 0px -20px;
     padding:10px 20px; 
   }
   .burger { 
@@ -97,11 +99,6 @@
 
   h1{
     font-size: 32px;
-    }
-  .footer {
-    padding: 10px;
-    font-size: 12px;
-    background-color: aqua;
     }
 }
 

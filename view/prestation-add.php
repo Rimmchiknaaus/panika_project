@@ -2,7 +2,7 @@
 <div class="section__header">
                 <h2 class="section__title"><?= $language['prestation-add']?></h2>
             </div>
-    <form class="form"method="POST" action="/ctrl/prestation-add.php">
+    <form class="form" method="POST" action="/ctrl/prestation-add.php">
             <input class="form__item" type="text" name="fr_libelle" placeholder="<?= $language['prestation_fr_libelle'] ?>"><br>
 
             <input class="form__item" type="text" name="ru_libelle" placeholder="<?= $language['prestation_ru_libelle'] ?>"><br>

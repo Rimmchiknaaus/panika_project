@@ -16,6 +16,7 @@ return [
     'label_phone' => 'Téléphone',
     'change_password' => 'Changer mon mot de passe',
     'label_new_password' => 'Nouveau mot de passe',
+    'label_password' => 'Mot de passe',
     'label_confirm_password' => 'Confirmer le mot de passe',
     'save_changes' => 'Enregistrer les modifications',
 
@@ -53,7 +54,6 @@ return [
     'h2_gallery'=> "Nos réalisations",
     'service_gallery'=> "Galerie",
 
-    'contact_title'=> "Contacts",
     'contact_subtitle'=> "Où nous trouver",
 
     'prestation-update_btn'   => "Modifier",
