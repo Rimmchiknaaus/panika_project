@@ -42,7 +42,7 @@ img{
 
 /* SERVICES */
 .services {
-    background-color: #FEEFF2;
+    background-color: $pinkClaire;
     &__list {
       display: flex;
       flex-direction: column;
@@ -65,7 +65,7 @@ img{
         }
         .service__text {
           font-size: 18px;
-          color: #6A524C;
+          color: $greyDark;
           text-align: left;
           font-weight: 600;
           transition: color 0.3s ease;
@@ -141,10 +141,10 @@ img{
     .contacts__info { 
       text-align: left; 
       font-size: 16px;
-      color:$smallTextGrey;
+      color:$greyDark;
       a { 
         font-size: 16px;
-        color:$smallTextGrey;
+        color:$greyDark;
       }
     }
     .contacts__map { 

@@ -13,12 +13,12 @@
     .categorie__libelle{
         text-align: left;
         font-size: 20px;
-        color: $sectionTitle;
+        color: $greyNormal;
     }
 
     p, a{
         font-size: 16px;
-        color: $smallTextGrey;
+        color: $greyDark;
     }
     &__img{
         width: 335px;
@@ -41,7 +41,7 @@
         padding: 8px 16px;
     }
     label{
-        color: $sectionTitle;
+        color: $greyNormal;
         font-size: 18px;
     }
 

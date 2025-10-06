@@ -28,7 +28,7 @@ main {
 
 h1 {
   font-size: 60px;
-  color: #151416;
+  color: #373737;
   font-family: "Work Sans", sans-serif;
 }
 
@@ -48,7 +48,7 @@ a {
 a {
   text-decoration: none;
   font-size: 18px;
-  color: #060606;
+  color: #373737;
 }
 
 footer {
@@ -69,7 +69,7 @@ section {
 
 .section__title {
   font-family: "Work Sans", sans-serif;
-  color: #B8B5B9;
+  color: #B6B6B6;
   font-weight: 400;
   font-size: 16px;
   margin-bottom: 8px;
@@ -79,7 +79,7 @@ section {
   font-family: "Work Sans", sans-serif;
   font-size: 24px;
   font-weight: 600;
-  color: #252224;
+  color: #373737;
   margin-bottom: 16px;
 }
 
@@ -163,7 +163,7 @@ section {
 }
 .services__list .service__card .service__text {
   font-size: 18px;
-  color: #6A524C;
+  color: #373737;
   text-align: left;
   font-weight: 600;
   transition: color 0.3s ease;
@@ -226,11 +226,11 @@ section {
 .contacts .contacts__info {
   text-align: left;
   font-size: 16px;
-  color: #6E6C71;
+  color: #373737;
 }
 .contacts .contacts__info a {
   font-size: 16px;
-  color: #6E6C71;
+  color: #373737;
 }
 .contacts .contacts__map {
   min-height: 280px;
@@ -307,10 +307,10 @@ section {
 .header__nav_menu a {
   background: #FFFFFF;
   font-size: 16px;
-  color: #6E6C71;
+  color: #B6B6B6;
 }
 .header__nav_menu a:hover {
-  color: #060606;
+  color: #373737;
   font-weight: bold;
 }
 
@@ -347,11 +347,11 @@ section {
   }
   .header__left i,
   .burger i {
-    color: #6E6C71;
+    color: #B6B6B6;
   }
   .header__left i:hover,
   .burger i:hover {
-    color: #060606;
+    color: #373737;
   }
   h1 {
     font-size: 32px;
@@ -371,10 +371,10 @@ section {
 
 .btn__rdv,
 .btn__voirPlus {
-  background: #FDFDFE;
-  color: #6D6D6E;
+  background: #F3F3F3;
+  color: #373737;
   padding: 12px 24px;
-  border: 1px solid #6D6D6E;
+  border: 1px solid #373737;
   text-align: center;
   font-weight: 600;
   font-size: 16px;
@@ -383,12 +383,12 @@ section {
 
 .btn__rdv:hover,
 .btn__voirPlus:hover {
-  background: #060606;
-  color: #DDDBD9;
+  background: #373737;
+  color: #F3F3F3;
 }
 
 .language_link {
-  color: #DDDBD9;
+  color: #B6B6B6;
 }
 
 .btn__admin {
@@ -435,8 +435,8 @@ section {
   }
 }
 .footer {
-  background-color: #FBFCFE;
-  color: #6E6C71;
+  background-color: #F3F3F3;
+  color: #B6B6B6;
   text-align: center;
   margin-left: -80px;
   margin-right: -80px;
@@ -447,7 +447,7 @@ section {
 }
 
 .footer i {
-  color: #6E6C71;
+  color: #B6B6B6;
   width: 24px;
 }
 
@@ -471,11 +471,11 @@ section {
 .categorie .categorie__libelle {
   text-align: left;
   font-size: 20px;
-  color: #252224;
+  color: #B6B6B6;
 }
 .categorie p, .categorie a {
   font-size: 16px;
-  color: #6E6C71;
+  color: #373737;
 }
 .categorie__img {
   width: 335px;
@@ -499,7 +499,7 @@ section {
   padding: 8px 16px;
 }
 .form label {
-  color: #252224;
+  color: #B6B6B6;
   font-size: 18px;
 }
 

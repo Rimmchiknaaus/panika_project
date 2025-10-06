@@ -29,7 +29,7 @@ main{
 
 h1{
     font-size: 60px;
-    color: #151416;
+    color: $greyDark;
     font-family: 'Work Sans', sans-serif;
 }
 section{    
@@ -43,7 +43,7 @@ a {
 a {
     text-decoration: none;
     font-size: 18px;
-    color: #060606;
+    color: $greyDark;
 }
 
 footer {
@@ -65,7 +65,7 @@ footer {
 
     .section__title{
         font-family: 'Work Sans', sans-serif;
-        color: $smallTextGreyClaire;
+        color: $greyNormal;
         font-weight: 400;
         font-size: 16px;
         margin-bottom: 8px;
@@ -74,7 +74,7 @@ footer {
         font-family: 'Work Sans', sans-serif;
         font-size: 24px;
         font-weight: 600;
-        color: $sectionTitle;
+        color: $greyDark;
         margin-bottom: 16px;
     }
 @media (min-width: 768px) {

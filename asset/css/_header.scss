@@ -51,10 +51,10 @@
 .header__nav_menu a{
   background:#FFFFFF;
   font-size: 16px;
-  color: $smallTextGrey;
+  color: $greyNormal;
   
   &:hover{
-    color: $smallTextGreyHover;
+    color: $greyDark;
     font-weight: bold;
   }
 }
@@ -90,9 +90,9 @@
     position:relative;
     z-index:1001;
     i{
-      color: $smallTextGrey;
+      color: $greyNormal;
       &:hover{
-        color: $smallTextGreyHover;
+        color: $greyDark;
       }
     }
   }
