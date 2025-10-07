@@ -59,4 +59,39 @@ class registerUser extends Ctrl
 
         // Vérifie les mots de passe
         if ($password !== $passwordRepeat) {
-     
+            $this->redirectTo('/ctrl/register-display.php');
+            exit();
+        }
+        // Hachage du mot de passe
+        $options = ['cost' => 12];
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT, $options);
+        // Vérifie si l'utilisateur existe déjà
+        $user = Auth::getUser($email);
+
+        if ($user) {
+        $this->redirectTo('/ctrl/register-display.php');
+        exit();
+}
+        // Création dans la BDD
+        $success = Auth::createUser($prenom, $nom, $email, $phone, $password,  $hashedPassword);
+
+        // Ajoute une notification d'erreur
+        if (!$success) {
+            $this->redirectTo('/ctrl/register-display.php');
+            exit();
+        }
+        // rediriger vers la list de question
+        $this->redirectTo('/ctrl/login-display.php');
+        exit();
+
+    }
+}
+
+// Exécute le Controlleur
+$ctrl = new registerUser();
+$ctrl->execute();
+
+
+
+
+
