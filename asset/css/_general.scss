@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-family: $secondaryFont;
     font-weight: 400;
 }
 
@@ -30,8 +30,9 @@ main{
 h1{
     font-size: 60px;
     color: $greyDark;
-    font-family: 'Work Sans', sans-serif;
+    font-family: $primaryFont;
 }
+
 section{    
     padding: 20px 0px;
 }
@@ -44,6 +45,7 @@ a {
     text-decoration: none;
     font-size: 18px;
     color: $greyDark;
+    font-family: $secondaryFont;
 }
 
 footer {
@@ -64,14 +66,14 @@ footer {
     }
 
     .section__title{
-        font-family: 'Work Sans', sans-serif;
+        font-family: $primaryFont;
         color: $greyNormal;
         font-weight: 400;
         font-size: 16px;
         margin-bottom: 8px;
     }
     .section__subtitle{
-        font-family: 'Work Sans', sans-serif;
+        font-family: $primaryFont;
         font-size: 24px;
         font-weight: 600;
         color: $greyDark;

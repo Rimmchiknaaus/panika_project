@@ -49,6 +49,7 @@ a {
   text-decoration: none;
   font-size: 18px;
   color: #373737;
+  font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
 footer {
@@ -121,6 +122,7 @@ section {
 }
 .hero__text {
   font-size: 18px;
+  font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
 @media (max-width: 991px) {
