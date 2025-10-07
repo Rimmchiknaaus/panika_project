@@ -53,35 +53,36 @@ class registerUser extends Ctrl
         $mail->CharSet = "UTF-8";
 
         $mail->addAddress ($email);  //Add a recipient     
-        $mail->Subject = ($lang === 'en') ? 'Welcome to  Web3@Crypto' : 'Bienvenue sur Web3@Crypto';
+        $mail->Subject = ($lang === 'fr') ? 'Bienvenue sur Panika' : 'Добро пожаловать';
         $mail->Body    = $bodyMsg; 
         $mail->AltBody =$AltBodyMsg;
 
         // Vérifie les mots de passe
         if ($password !== $passwordRepeat) {
-            $this->redirectTo('/ctrl/register-display.php');
+            $this->redirectTo('/ctrl/register-display.php?lang=' . $lang);
             exit();
         }
+
         // Hachage du mot de passe
         $options = ['cost' => 12];
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT, $options);
+        
         // Vérifie si l'utilisateur existe déjà
         $user = Auth::getUser($email);
-
         if ($user) {
-        $this->redirectTo('/ctrl/register-display.php');
-        exit();
-}
+            $this->redirectTo('/ctrl/register-display.php?lang=' . $lang);
+            exit();
+            }
         // Création dans la BDD
         $success = Auth::createUser($prenom, $nom, $email, $phone, $password,  $hashedPassword);
 
         // Ajoute une notification d'erreur
         if (!$success) {
-            $this->redirectTo('/ctrl/register-display.php');
+            $this->redirectTo('/ctrl/register-display.php?lang=' . $lang);
             exit();
         }
         // rediriger vers la list de question
-        $this->redirectTo('/ctrl/login-display.php');
+        $this->redirectTo('/ctrl/login-display.php?lang=' . $lang);
         exit();
 
     }

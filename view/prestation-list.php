@@ -18,7 +18,7 @@
                     <p class="categorie__libelle"><?= $categorie['libelle'] ?></p>
                         <?php foreach ($categorie['prestations'] as $p){ ?>
                             <div class="prestation__card">
-                                <div class="prestation">
+                            <div class="prestation">
                                     <div class="prestation__description">
                                         <a href="#" class="prestation__text"><?= $p['libelle'] ?></a>
                                         <p class="prestation__duree"><?= $p['duree'] ?>min</p>

@@ -31,16 +31,17 @@ class loginUser extends Ctrl
         // Lis les informations saisies dans le formulaire
         $email = $_POST['email'];
         $password = $_POST['password'];
+        $lang = $_GET['lang'] ?? 'fr';
 
         $user = Auth::getUser($email); 
 
 
         if ($user && password_verify($password, $user['hashedPassword'])) {
             $_SESSION['user'] = $user;
-            $this->redirectTo('/ctrl/home.php');
+            $this->redirectTo('/ctrl/home.php?lang=' . $lang);
             exit();
         } else {
-            $this->redirectTo('/ctrl/login-display.php');
+            $this->redirectTo('/ctrl/login-display.php?lang=' . $lang);
             exit();
         }
 

@@ -46,7 +46,7 @@
                     <li><a href="/ctrl/logout.php"><?= $language['nav_logout'] ?></a></li>
                 <?php else: ?>
                     <li><a href="/ctrl/login-display.php"><?= $language['nav_login'] ?></a></li>
-                    <li><a href="/ctrl/register-display.php"><?= $language['nav_register'] ?></a></li>
+                    <li><a href="/ctrl/register-display.php?lang=' . $lang"><?= $language['nav_register'] ?></a></li>
                 <?php endif; ?>
             </ul>
         </nav>

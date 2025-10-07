@@ -71,7 +71,7 @@ class Service
     public static function getPrestation(int $id, string $lang = 'fr'): ?array
     {
 
-        $query =  "SELECT prestation.id, prestation.idCategorie, prestation.fr_libelle, prestation.ru_libelle, prestation.prix, prestation.duree, prestation.actif";
+        $query =  'SELECT prestation.id, prestation.idCategorie, prestation.fr_libelle, prestation.ru_libelle, prestation.prix, prestation.duree, prestation.actif';
         $query .= ' FROM prestation';
         $query .= ' JOIN categorie ON prestation.idCategorie = categorie.id';
         $query .= ' WHERE prestation.id = :id';
@@ -107,3 +107,4 @@ class Service
             return $statement->fetchAll(PDO::FETCH_ASSOC);
         }
 }
+

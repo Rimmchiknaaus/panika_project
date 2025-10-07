@@ -1,4 +1,33 @@
-USE `rimma_panika`;
+
+DROP DATABASE IF EXISTS `rimma_panika`
+;
+
+-- Crée la base de données
+-- /!\ penser à remplacer 'GRA' par _son_ 'trigramme' !
+-- NOTE le caractère ` (aka: back-tick) doit être utilisé car le nom de la base de données commence par des chiffres et contient des caractères spéciaux tels que -
+CREATE DATABASE IF NOT EXISTS `rimma_panika`
+;
+
+-- [OPTIONAL !] Cette section n'est absolument pas requise.
+-- [NOTE] Mais quand on va 'connecter' le PHP avec la BDD, ça va prendre beaucoup + de sens...
+-- 
+-- Crée un compte 'applicatif'.
+-- Ce compte représente tout ce que qu'a droit de faire le 'site web' avec la 'base de données'.
+-- Le but est de donner le moins de droits possibles à ce compte, donc à tous les Utilisateurs du 'site web'.
+DROP USER IF EXISTS 'rimma'@'localhost'
+;
+CREATE USER 'rimma'@'localhost' IDENTIFIED BY 'rimma_panika'
+;
+--
+-- Restreint au maximum les capacités (les droits) du compte 'applicatif'.
+-- Le 'compte applicatif' n'a le droit que de lire, écrire, modifer, supprimer, et rien de +. (pas de création de table, ni de destruction de table par exemple)
+GRANT SELECT, INSERT, UPDATE, DELETE ON `rimma_panika`.* TO 'rimma'@'localhost'
+;
+
+-- Mentionne le nom de la base de données à utiliser pour exécuter les commandes SQL qui suivent
+-- (oui, il peut y avoir plusieurs bases de données sur le même serveur de base de données !)
+-- /!\ penser à remplacer 'GRA' par _son_ 'trigramme' !
+-- NOTE le caractère ` (aka: back-tick) doit être utilisé car le nom de la base de données commence par des chiffres et contient des caractères spéciaux tels que -USE `rimma_panika`;
 
 CREATE TABLE utilisateur (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
