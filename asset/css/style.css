@@ -395,8 +395,8 @@ section {
 
 .btn__admin {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 12px;
   padding: 10px 0px;
 }
 .btn__admin_item {
@@ -435,6 +435,10 @@ section {
     font-size: 16px;
     padding: 12px 24px;
   }
+  .btn__admin {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 .footer {
   background-color: #F3F3F3;
@@ -462,8 +466,6 @@ section {
 .categorie__card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding-bottom: 10px;
 }
 .categorie .prestation__card {
@@ -530,5 +532,35 @@ section {
   }
   .form {
     width: 50%;
+  }
+}
+.gallery__block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.gallery__block_item {
+  overflow: hidden;
+}
+.gallery__block_item img {
+  width: 335px;
+  height: 360px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .gallery__block {
+    gap: 20px;
+  }
+  .gallery__block_item {
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery__block_item img {
+    width: 280px;
+    height: 300px;
   }
 }/*# sourceMappingURL=style.css.map */

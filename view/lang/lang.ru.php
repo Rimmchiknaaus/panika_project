@@ -57,8 +57,8 @@ return [
 
     'contact_subtitle'=> "Как нас найти",
 
-    'prestation-update_btn'   => "Изменить",
-    'prestation-delete_btn'   => "Удалить",
+    'update_btn'   => "Изменить",
+    'delete_btn'   => "Удалить",
 
     'prestation-update'   => "Редактировать процедуру",
 ];

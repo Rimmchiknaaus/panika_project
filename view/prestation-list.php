@@ -29,8 +29,8 @@
                                 </div>
                                     <?php if (isset($_SESSION['user']) && ($_SESSION['user']['role'] === 'admin')){ ?>
                                         <div class="btn__admin">
-                                            <a href="/ctrl/prestation-update-display.php?id=<?= $p['id'] ?>&lang=<?= $lang ?>" class="btn__admin_item"><?= $language['prestation-update_btn']?></a>
-                                            <a href="/ctrl/prestation-delete.php?id=<?= $p['id'] ?>&lang=<?= $lang ?>" class="btn__admin_item"><?= $language['prestation-delete_btn']?></a>     
+                                            <a href="/ctrl/prestation-update-display.php?id=<?= $p['id'] ?>&lang=<?= $lang ?>" class="btn__admin_item"><?= $language['update_btn']?></a>
+                                            <a href="/ctrl/prestation-delete.php?id=<?= $p['id'] ?>&lang=<?= $lang ?>" class="btn__admin_item"><?= $language['delete_btn']?></a>     
                                         </div>
                                     <?php } ?>
                             </div>

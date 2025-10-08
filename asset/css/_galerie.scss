@@ -1,0 +1,31 @@
+.gallery__block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    &_item {
+        overflow: hidden;
+        img{
+            width: 335px;
+            height: 360px;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .gallery__block{
+        gap: 20px;
+        &_item {
+            display: flex;
+            flex-direction: column;
+            img{
+                width: 280px;
+                height: 300px;
+            }
+        }
+    }
+}
+

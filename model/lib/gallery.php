@@ -11,13 +11,58 @@ use  App\Model\Lib\BDD as LibBdd;
 class Gallery
 {
 
-public static function readAllPhoto(string $lang = 'fr') 
+    public static function readAllPhoto(string $lang = 'fr'): ?array
     {
         $libelleCol = $lang . '_libelle';
-        // Prépare la requête
-        $query = "SELECT galerie.id, galerie.image, galerie.created_at, categorie.$libelleCol AS libelle FROM galerie  INNER JOIN categorie ON galerie.idCategorie = categorie.id";
+    
+        $query = "SELECT galerie.id, galerie.idCategorie, galerie.image, categorie.$libelleCol AS libelle";
+        $query .= ' FROM galerie';
+        $query .= ' INNER JOIN categorie ON galerie.idCategorie = categorie.id';
+        $query .= ' ORDER BY galerie.created_at DESC';
+    
         $statement = LibBdd::connect()->prepare($query);
         $statement->execute();
+    
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function createPhoto($idCategorie, string $imagePath): bool
+        {
+            $query = "INSERT INTO galerie (idCategorie, image) VALUES (:idCategorie, :image)";
+            
+            $statement = LibBdd::connect()->prepare($query);
+            $statement->bindParam(':idCategorie', $idCategorie);
+            $statement->bindParam(':image', $imagePath);
+        
+            return $statement->execute();
+        }  
+
+        public static function deletePhoto(int $id): bool
+        {
+            $db = LibBdd::connect(); 
+            $db->beginTransaction();
+
+            $query = 'DELETE FROM galerie WHERE id = :id';
+            $statement = $db->prepare($query);
+            $statement->bindParam(':id', $id);
+            $statement->execute();
+
+            $db->commit();
+            return true;
+    }
+    public static function getPrestationByCategorie($idCategorie, string $lang = 'fr'): array
+    {
+        $libelleCol = $lang . '_libelle';
+
+        $query = "SELECT prestation.id, prestation.idCategorie, prestation.$libelleCol AS libelle, prestation.prix, prestation.duree, prestation.actif";
+        $query .= ' FROM prestation';
+        $query .= ' JOIN categorie ON prestation.idCategorie = categorie.id';
+        $query .= ' WHERE prestation.idCategorie = :idCategorie';
+        $statement = LibBdd::connect()->prepare($query);
+        $statement->bindParam(':idCategorie', $idCategorie, PDO::PARAM_INT);
+        $statement->execute();
+
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 }
+

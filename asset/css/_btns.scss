@@ -31,8 +31,8 @@
 
 .btn__admin{
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 12px;
     padding: 10px 0px;
     &_item{
         background: $orangeClaire;
@@ -74,6 +74,10 @@
             font-size: 16px;
             padding: 12px 24px;
         }
+    }
+    .btn__admin{
+        flex-direction: row;
+        justify-content: center;
     }
 }
 

@@ -30,7 +30,7 @@
             <?php } ?>
             </div>
             <div class="btn__group">
-                <a  href="services.html" class="btn__voirPlus"><?= $language['vp_button']?></a>
+                <a  href="/ctrl/prestation-list.php?lang=' . $lang" class="btn__voirPlus"><?= $language['vp_button']?></a>
                 <a  href="rdv.html" class="btn__rdv"><?= $language['rdv_button']?></a>         
             </div>
         </section>

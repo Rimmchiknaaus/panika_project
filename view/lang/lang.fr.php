@@ -56,8 +56,8 @@ return [
 
     'contact_subtitle'=> "Où nous trouver",
 
-    'prestation-update_btn'   => "Modifier",
-    'prestation-delete_btn'   => "Supprimer",
+    'update_btn'   => "Modifier",
+    'delete_btn'   => "Supprimer",
 
     'prestation-update'   => "Modifier prestation",
 
