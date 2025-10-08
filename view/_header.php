@@ -56,3 +56,9 @@ function toggleMenu() {
 
 </body>
 </html>
+
+<html lang="<?= htmlspecialchars($lang) ?>">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $this->getPageTitle() ?></title>
+</head>

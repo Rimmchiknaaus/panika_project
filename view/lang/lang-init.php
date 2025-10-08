@@ -1,13 +1,13 @@
 <?php
 
+//Lecture de la langue via l’URL
 if (!empty($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
 }
-
+//Définition de la langue active
 $lang = $_SESSION['lang'] ?? 'fr';
 
-
-
+//Chargement du fichier de traduction
 $langFile = $_SERVER['DOCUMENT_ROOT'] . "/view/lang/lang.$lang.php";
 
 if (file_exists($langFile)) {
@@ -19,3 +19,4 @@ if (file_exists($langFile)) {
 if (!is_array($language)) {
     $language = [];
 }
+

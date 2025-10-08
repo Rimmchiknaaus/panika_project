@@ -426,6 +426,10 @@ section {
   padding: 0px 12px;
 }
 
+.language_link_item {
+  color: #FF0033;
+}
+
 @media (min-width: 768px) {
   .btn__group {
     flex-direction: row;
