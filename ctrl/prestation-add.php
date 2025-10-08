@@ -25,6 +25,7 @@ class prestationAdd extends Ctrl
     /** @Override */
     public function do(): void
     {
+        $lang = $_SESSION['lang'] ?? 'fr';
         $idCategorie = $_POST['idCategorie'];
         $frLibelle = $_POST['fr_libelle'];
         $ruLibelle = $_POST['ru_libelle'];
@@ -34,7 +35,7 @@ class prestationAdd extends Ctrl
 
         LibService::createPrestation($idCategorie, $frLibelle, $ruLibelle, $prix, $duree, $actif);
 
-        $this->redirectTo('/ctrl/prestation-list.php');
+        $this->redirectTo('/ctrl/prestation-list.php?lang=' . $lang);
     }
 }
 

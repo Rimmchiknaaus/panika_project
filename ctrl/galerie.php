@@ -16,7 +16,8 @@ class galerieDisplay extends Ctrl
     /** @Override */
     public function getPageTitle(): ?string
     {
-        return "Galerie";
+        $lang = $_SESSION['lang'] ?? 'fr';
+        return $lang === 'ru' ? 'Галерея' : 'Galerie';
     }
 
     /** @Override */

@@ -14,7 +14,8 @@ class prestationList extends Ctrl
     /** @Override */
     public function getPageTitle(): ?string
     {
-        return "Nos prestations";
+        $lang = $_SESSION['lang'] ?? 'fr';
+        return $lang === 'ru' ? 'Наши услуги' : 'Nos prestations';
     }
 
     /** @Override */

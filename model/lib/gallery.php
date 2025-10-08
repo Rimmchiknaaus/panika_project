@@ -50,19 +50,5 @@ class Gallery
             $db->commit();
             return true;
     }
-    public static function getPrestationByCategorie($idCategorie, string $lang = 'fr'): array
-    {
-        $libelleCol = $lang . '_libelle';
-
-        $query = "SELECT prestation.id, prestation.idCategorie, prestation.$libelleCol AS libelle, prestation.prix, prestation.duree, prestation.actif";
-        $query .= ' FROM prestation';
-        $query .= ' JOIN categorie ON prestation.idCategorie = categorie.id';
-        $query .= ' WHERE prestation.idCategorie = :idCategorie';
-        $statement = LibBdd::connect()->prepare($query);
-        $statement->bindParam(':idCategorie', $idCategorie, PDO::PARAM_INT);
-        $statement->execute();
-
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
-    }
 }
 

@@ -13,7 +13,8 @@ class loginUserDisplay extends Ctrl
     /** @Override */
     public function getPageTitle(): ?string
     {
-        return "Se connecter";
+        $lang = $_SESSION['lang'] ?? 'fr';
+        return $lang === 'ru' ? 'Войти' : "Se connecter";
     }
 
     /** @Override */

@@ -14,7 +14,8 @@ class prestationUpdateDisplay extends Ctrl
     /** @Override */
     public function getPageTitle(): ?string
     {
-        return 'Modifier prestation';
+        $lang = $_SESSION['lang'] ?? 'fr';
+        return $lang === 'ru' ? 'Изменить услугу' : 'Modifier prestation';
     }
     /** @Override */
     public function getViewFile(): ?string

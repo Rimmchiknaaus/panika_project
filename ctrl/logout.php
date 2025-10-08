@@ -26,8 +26,15 @@ class logoutUser extends Ctrl
     /** @Override */
     public function do(): void
     {
-        $_SESSION =[];  
-        $this->redirectTo('/index.php'); 
+
+        unset($_SESSION['user']);
+
+        if (!empty($_GET['redirect'])) {
+            header('Location: ' . $_GET['redirect']);
+            exit;
+        }
+        header('Location: /ctrl/home.php');
+        exit;
     }
 }
 

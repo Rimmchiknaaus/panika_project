@@ -13,7 +13,8 @@ class registerUserDisplay extends Ctrl
     /** @Override */
     public function getPageTitle(): ?string
     {
-        return "S'inscrire";
+        $lang = $_SESSION['lang'] ?? 'fr';
+        return $lang === 'ru' ? 'Зарегистрироваться' : "S'inscrire";
     }
 
     /** @Override */

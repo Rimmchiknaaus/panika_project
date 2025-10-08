@@ -30,7 +30,7 @@
             <?php } ?>
             </div>
             <div class="btn__group">
-                <a  href="/ctrl/prestation-list.php?lang=' . $lang" class="btn__voirPlus"><?= $language['vp_button']?></a>
+                <a  href="/ctrl/prestation-list.php" class="btn__voirPlus"><?= $language['vp_button']?></a>
                 <a  href="rdv.html" class="btn__rdv"><?= $language['rdv_button']?></a>         
             </div>
         </section>
@@ -85,9 +85,9 @@ let slides = document.querySelectorAll('.gallery-slider img');
 let currentIndex = 0;
 
 function showNextSlide() {
-  slides[currentIndex].classList.remove('active');
-  currentIndex = (currentIndex + 1) % slides.length;
-  slides[currentIndex].classList.add('active');
+    slides[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % slides.length;
+    slides[currentIndex].classList.add('active');
 }
 
 setInterval(showNextSlide, 3000); // каждые 3 секунды

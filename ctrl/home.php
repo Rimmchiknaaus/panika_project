@@ -16,7 +16,8 @@ class homeDisplay extends Ctrl
     /** @Override */
     public function getPageTitle(): ?string
     {
-        return "Accueil";
+        $lang = $_SESSION['lang'] ?? 'fr';
+        return $lang === 'ru' ? 'Салон Красоты' : 'Accueil';
     }
 
     /** @Override */
@@ -28,12 +29,11 @@ class homeDisplay extends Ctrl
     /** @Override */
     public function do(): void
     {
-        $lang = $_SESSION['lang'] ?? 'fr';
 
-        $listCategorie = LibService::readAllCategorie($lang);
+        $listCategorie = LibService::readAllCategorie();
         $this->addViewArg('listCategorie', $listCategorie);
 
-        $listPhoto = LibGallery::readAllPhoto($lang);
+        $listPhoto = LibGallery::readAllPhoto();
         $this->addViewArg('listPhoto', $listPhoto);
     }
 }

@@ -14,7 +14,8 @@ class prestationAddDisplay extends Ctrl
     /** @Override */
     public function getPageTitle(): ?string
     {
-        return 'Nouvelle prestation';
+        $lang = $_SESSION['lang'] ?? 'fr';
+        return $lang === 'ru' ? 'Добавить процедуру' : 'Nouvelle prestation';
     }
     /** @Override */
     public function getViewFile(): ?string
