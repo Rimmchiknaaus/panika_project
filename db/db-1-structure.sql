@@ -51,8 +51,14 @@ CREATE TABLE categorie (
 CREATE TABLE prestataire (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     prenom VARCHAR(100) NOT NULL,
-    actif BOOLEAN DEFAULT TRUE,
+    actif BOOLEAN DEFAULT TRUE
+) ENGINE=InnoDB;
+
+CREATE TABLE prestataire_categorie (
+    idPrestataire INT UNSIGNED NOT NULL,
     idCategorie INT UNSIGNED NOT NULL,
+    PRIMARY KEY (idPrestataire, idCategorie),
+    FOREIGN KEY (idPrestataire) REFERENCES prestataire(id),
     FOREIGN KEY (idCategorie) REFERENCES categorie(id)
 ) ENGINE=InnoDB;
 
@@ -93,35 +99,6 @@ CREATE TABLE galerie (
     image VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (idCategorie) REFERENCES categorie(id)
-) ENGINE=InnoDB;
-
-CREATE TABLE produit (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    fr_libelle VARCHAR(150),
-    ru_libelle VARCHAR(150),
-    fr_description TEXT,
-    ru_description TEXT,
-    prix DECIMAL(10,2),
-    stock INT DEFAULT 0,
-    image VARCHAR(255),
-    actif BOOLEAN DEFAULT TRUE
-) ENGINE=InnoDB;
-
-CREATE TABLE commande (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    idUtilisateur INT UNSIGNED NOT NULL,
-    prix_total DECIMAL(10,2) NOT NULL,
-    quantite INT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(id)
-) ENGINE=InnoDB;
-
-CREATE TABLE commande_produit (
-    idCommande INT UNSIGNED NOT NULL,
-    idProduit INT UNSIGNED NOT NULL,
-    PRIMARY KEY (idCommande, idProduit),
-    FOREIGN KEY (idCommande) REFERENCES commande(id),
-    FOREIGN KEY (idProduit) REFERENCES produit(id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE avis (
