@@ -29,94 +29,112 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON `rimma_panika`.* TO 'rimma'@'localhost'
 -- /!\ penser à remplacer 'GRA' par _son_ 'trigramme' !
 -- NOTE le caractère ` (aka: back-tick) doit être utilisé car le nom de la base de données commence par des chiffres et contient des caractères spéciaux tels que -USE `rimma_panika`;
 
-CREATE TABLE utilisateur (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    prenom VARCHAR(100) NOT NULL,
-    nom VARCHAR(100) NOT NULL,
-    email VARCHAR(150) UNIQUE NOT NULL,
-    phone VARCHAR(20) NOT NULL,
-    password VARCHAR(255),
-    hashedPassword VARCHAR(255) NOT NULL,
-    role VARCHAR(50) DEFAULT 'client',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB;
+-- ========================
+    -- 1) Création des tables
+    -- ========================
 
-CREATE TABLE categorie (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    fr_libelle VARCHAR(150) NOT NULL,
-    ru_libelle VARCHAR(150) NOT NULL,
-    image VARCHAR(255)
-) ENGINE=InnoDB;
+    CREATE TABLE utilisateur (
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+        ,prenom VARCHAR(100) NOT NULL
+        ,nom VARCHAR(100) NOT NULL
+        ,email VARCHAR(150) UNIQUE NOT NULL
+        ,phone VARCHAR(20) NOT NULL
+        ,password VARCHAR(255)
+        ,hashedPassword VARCHAR(255) NOT NULL
+        ,role VARCHAR(50) DEFAULT 'client'
+        ,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB;
 
-CREATE TABLE prestataire (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    prenom VARCHAR(100) NOT NULL,
-    actif BOOLEAN DEFAULT TRUE
-) ENGINE=InnoDB;
+    CREATE TABLE categorie (
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+        ,fr_libelle VARCHAR(150) NOT NULL
+        ,ru_libelle VARCHAR(150) NOT NULL
+        ,image VARCHAR(255)
+    ) ENGINE=InnoDB;
 
-CREATE TABLE prestataire_categorie (
-    idPrestataire INT UNSIGNED NOT NULL,
-    idCategorie INT UNSIGNED NOT NULL,
-    PRIMARY KEY (idPrestataire, idCategorie),
-    FOREIGN KEY (idPrestataire) REFERENCES prestataire(id),
-    FOREIGN KEY (idCategorie) REFERENCES categorie(id)
-) ENGINE=InnoDB;
+    CREATE TABLE prestataire (
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+        ,prenom VARCHAR(100) NOT NULL
+        ,actif BOOLEAN DEFAULT TRUE
+    ) ENGINE=InnoDB;
 
-CREATE TABLE prestation (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    idCategorie INT UNSIGNED NOT NULL,
-    fr_libelle VARCHAR(150),
-    ru_libelle VARCHAR(150),
-    prix DECIMAL(10,2) NOT NULL,
-    duree INT,
-    actif BOOLEAN DEFAULT TRUE,
-    FOREIGN KEY (idCategorie) REFERENCES categorie(id)
-) ENGINE=InnoDB;
+    CREATE TABLE prestataire_categorie (
+        idPrestataire INT UNSIGNED NOT NULL
+        ,idCategorie INT UNSIGNED NOT NULL
+        ,PRIMARY KEY (idPrestataire, idCategorie)
+    ) ENGINE=InnoDB;
 
-CREATE TABLE rdv (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    idUtilisateur INT UNSIGNED NOT NULL,
-    idPrestataire INT UNSIGNED NOT NULL,
-    date_rdv DATE NOT NULL,
-    heure_rdv TIME NOT NULL,
-    comment TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(id),
-    FOREIGN KEY (idPrestataire) REFERENCES prestataire(id)
-) ENGINE=InnoDB;
+    CREATE TABLE prestation (
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+        ,idCategorie INT UNSIGNED NOT NULL
+        ,fr_libelle VARCHAR(150)
+        ,ru_libelle VARCHAR(150)
+        ,prix DECIMAL(10,2) NOT NULL
+        ,duree INT
+        ,actif BOOLEAN DEFAULT TRUE
+    ) ENGINE=InnoDB;
 
-CREATE TABLE rdv_prestation (
-    idRdv INT UNSIGNED NOT NULL,
-    idPrestation INT UNSIGNED NOT NULL,
-    PRIMARY KEY (idRdv, idPrestation),
-    FOREIGN KEY (idRdv) REFERENCES rdv(id),
-    FOREIGN KEY (idPrestation) REFERENCES prestation(id)
-) ENGINE=InnoDB;
+    CREATE TABLE rdv (
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+        ,idUtilisateur INT UNSIGNED NOT NULL
+        ,idPrestataire INT UNSIGNED NOT NULL
+        ,idPrestation INT UNSIGNED NOT NULL
+        ,date_rdv DATE NOT NULL
+        ,heure_rdv TIME NOT NULL
+        ,comment TEXT
+        ,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB;
 
-CREATE TABLE galerie (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    idCategorie INT UNSIGNED NOT NULL,
-    image VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (idCategorie) REFERENCES categorie(id)
-) ENGINE=InnoDB;
+    CREATE TABLE galerie (
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+        ,idCategorie INT UNSIGNED NOT NULL
+        ,image VARCHAR(255) NOT NULL
+        ,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB;
 
-CREATE TABLE avis (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    idUtilisateur INT UNSIGNED NOT NULL,
-    contenu TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(id)
-) ENGINE=InnoDB;
+    CREATE TABLE avis (
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+        ,idUtilisateur INT UNSIGNED NOT NULL
+        ,contenu TEXT NOT NULL
+        ,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB;
 
-CREATE TABLE commentaire (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    idUtilisateur INT UNSIGNED NOT NULL,
-    idAvis INT UNSIGNED NOT NULL,
-    contenu TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(id),
-    FOREIGN KEY (idAvis) REFERENCES avis(id)
-) ENGINE=InnoDB;
+    CREATE TABLE commentaire (
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY
+        ,idAvis INT UNSIGNED NOT NULL
+        ,contenu TEXT NOT NULL
+        ,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ,updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB;
+
+-- ============================
+    -- 2) Contraintes (FK) séparées
+    -- ============================
+
+    ALTER TABLE prestataire_categorie
+        ADD CONSTRAINT fk_pc_prestataire FOREIGN KEY (idPrestataire) REFERENCES prestataire(id)
+        ,ADD CONSTRAINT fk_pc_categorie FOREIGN KEY (idCategorie)   REFERENCES categorie(id)
+    ;
+
+    ALTER TABLE prestation
+        ADD CONSTRAINT fk_prestation_categorie FOREIGN KEY (idCategorie) REFERENCES categorie(id)
+    ;
+
+    ALTER TABLE rdv
+        ADD CONSTRAINT fk_rdv_utilisateur FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(id)
+        ,ADD CONSTRAINT fk_rdv_prestataire FOREIGN KEY (idPrestataire) REFERENCES prestataire(id)
+        ,ADD CONSTRAINT fk_rdv_prestation FOREIGN KEY (idPrestation)  REFERENCES prestation(id)
+    ;
+
+    ALTER TABLE galerie
+        ADD CONSTRAINT fk_galerie_categorie FOREIGN KEY (idCategorie) REFERENCES categorie(id)
+    ;
+
+    ALTER TABLE avis
+        ADD CONSTRAINT fk_avis_utilisateur FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(id)
+    ;
+
+    ALTER TABLE commentaire
+        ADD CONSTRAINT fk_commentaire_avis FOREIGN KEY (idAvis) REFERENCES avis(id)
+    ;
