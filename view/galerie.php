@@ -15,6 +15,15 @@
             </div>
         </form>
     <?php } ?>
+    <div class="filtre-categories" id="filtre">
+        <button onclick="toggleFiltre()" class="filtre-btn"><i class="fa fa-filter"></i></button>
+        <div id="categorie-list" class="categorie-list">
+            <?php foreach ($args['listCategorie'] as $c){ ?>
+                <a class="btn__filtre" href="/ctrl/galerie.php?categorie=<?= $c['id'] ?>&lang=<?= $lang ?>"><?= $c['libelle'] ?></a>
+            <?php } ?>
+            <a class="btn__filtre"  href="/ctrl/galerie.php?lang=<?= $lang ?>" ><?= $language['filtre-categorie'] ?></a>
+        </div>
+    </div>
     <div class="gallery__block">
         <?php foreach ($args['listPhoto'] as $photo){ ?>
             <div class="gallery__block_item">
@@ -28,4 +37,9 @@
         <?php } ?>
     </div>
 </section>
-
+<script>
+function toggleFiltre() {
+    const filtre = document.getElementById('categorie-list');
+    filtre.classList.toggle('show');
+}
+</script>

@@ -30,12 +30,16 @@ class galerieDisplay extends Ctrl
     public function do(): void
     {
         $lang = $_SESSION['lang'] ?? 'fr';
-
+        $categorieId = $_GET['categorie'] ?? null;
         $listCategorie = LibService::readAllCategorie($lang);
         $this->addViewArg('listCategorie', $listCategorie);
 
+        if ($categorieId) {
+            $listPhoto = LibGallery::getPhotoByCategorie($categorieId, $lang);
+        } else {
+            $listPhoto = LibGallery::readAllPhoto($lang);
+        }
 
-        $listPhoto = LibGallery::readAllPhoto($lang);
         $this->addViewArg('listPhoto', $listPhoto);
 
     }

@@ -60,6 +60,7 @@ return [
     'delete_btn'   => "Supprimer",
 
     'prestation-update'   => "Modifier prestation",
+    'filtre-categorie'   => "Toute les categories",
 
 ];
 

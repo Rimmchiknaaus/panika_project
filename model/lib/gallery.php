@@ -50,5 +50,21 @@ class Gallery
             $db->commit();
             return true;
     }
+    public static function getPhotoByCategorie(int $categorieId, string $lang = 'fr'): array
+    {
+        $libelleCol = $lang . '_libelle';
+
+        $query = "SELECT galerie.id, galerie.idCategorie, galerie.image, categorie.$libelleCol AS libelle";
+        $query .= ' FROM galerie';
+        $query .= ' INNER JOIN categorie ON galerie.idCategorie = categorie.id';
+        $query .= ' WHERE categorie.id = :categorieId';
+        $query .= ' ORDER BY galerie.created_at DESC';
+
+        $statement = LibBdd::connect()->prepare($query);
+        $statement->bindParam(':categorieId', $categorieId, PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 

@@ -53,12 +53,7 @@ function toggleMenu() {
 }
 </script>
 <script src="https://kit.fontawesome.com/026a02d0be.js" crossorigin="anonymous"></script>
-
+<script src="https://kit.fontawesome.com/026a02d0be.js" crossorigin="anonymous"></script>
 </body>
 </html>
 
-<html lang="<?= htmlspecialchars($lang) ?>">
-<head>
-    <meta charset="UTF-8">
-    <title><?= $this->getPageTitle() ?></title>
-</head>

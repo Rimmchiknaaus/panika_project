@@ -61,5 +61,7 @@ return [
     'delete_btn'   => "Удалить",
 
     'prestation-update'   => "Редактировать процедуру",
+    'filtre-categorie'   => "Все категории",
+
 ];
 
