@@ -6,7 +6,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </div>
                 <div class="btn__group">
-                    <a class="btn__rdv" href="rdv.html"><?= $language['rdv_button']?></a>
+                    <a class="btn__client" href="rdv.html"><?= $language['rdv_button']?></a>
                 </div>
             </div>
             <div class="hero__right">
@@ -30,8 +30,8 @@
             <?php } ?>
             </div>
             <div class="btn__group">
-                <a  href="/ctrl/prestation-list.php" class="btn__voirPlus"><?= $language['vp_button']?></a>
-                <a  href="rdv.html" class="btn__rdv"><?= $language['rdv_button']?></a>         
+                <a  href="/ctrl/prestation-list.php" class="btn__client"><?= $language['vp_button']?></a>
+                <a  href="rdv.html" class="btn__client"><?= $language['rdv_button']?></a>         
             </div>
         </section>
         <section class="gallery">
@@ -45,7 +45,7 @@
                     <?php } ?>
                 </div>
                 <div class="btn__group">
-                    <a href="services.html" class="btn__voirPlus"><?= $language['vp_button']?></a>
+                    <a href="services.html" class="btn__client"><?= $language['vp_button']?></a>
                 </div>
             </div>
         </section>    

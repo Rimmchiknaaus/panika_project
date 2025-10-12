@@ -43,7 +43,7 @@
             <?php } ?>
             </div>
             <div class="btn__group">
-                <a  href="rdv.html" class="btn__rdv"><?= $language['rdv_button']?></a>         
+                <a  href="rdv.html" class="btn__client"><?= $language['rdv_button']?></a>         
             </div>
         </section>
 </main>

@@ -9,7 +9,7 @@
             <button type="button" onclick="togglePassword('myPassword')">👁</button>
         </div>
         <div class="btn__group">
-            <button class="btn__rdv" type="submit"><?= $language['nav_login'] ?></button>
+            <button class="btn__client" type="submit"><?= $language['nav_login'] ?></button>
         </div>
     </form>
 </section>

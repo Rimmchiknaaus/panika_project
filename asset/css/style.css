@@ -371,8 +371,7 @@ section {
   gap: 12px;
 }
 
-.btn__rdv,
-.btn__voirPlus {
+.btn__client {
   background: #F3F3F3;
   color: #373737;
   padding: 12px 24px;
@@ -383,8 +382,7 @@ section {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.btn__rdv:hover,
-.btn__voirPlus:hover {
+.btn__client:hover {
   background: #373737;
   color: #F3F3F3;
 }

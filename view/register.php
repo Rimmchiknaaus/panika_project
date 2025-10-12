@@ -20,7 +20,7 @@
             <button type="button" onclick="togglePassword('myPasswordRepeat')">👁</button>
         </div>
         <div class="btn__group">
-            <button class="btn__rdv" type="submit"><?= $language['signup_button'] ?></button>
+            <button class="btn__client" type="submit"><?= $language['signup_button'] ?></button>
         </div>
     </form>
 </section>

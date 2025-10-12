@@ -23,7 +23,7 @@
                 <a class="language_link_item" href="<?= $_SERVER['PHP_SELF'] ?>?lang=fr"
                 <?php if($lang == 'fr'){?> style="color: #6D6D6E;" <?php } ?>>FR</a>    
             </div>
-            <a class="btn__rdv btn__header" href="/ctrl/rdv-display.php?lang=<?= $lang ?>">
+            <a class="btn__client btn__header" href="/ctrl/rdv-display.php?lang=<?= $lang ?>">
                 <?= $language['nav_rdv'] ?>
             </a>
         </div>
