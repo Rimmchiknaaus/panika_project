@@ -53,8 +53,6 @@ return [
     'h2_gallery'=> "Галерея",
     'service_gallery'=>  "Наши работы",
 
-
-
     'contact_subtitle'=> "Как нас найти",
 
     'update_btn'   => "Изменить",
@@ -62,6 +60,17 @@ return [
 
     'prestation-update'   => "Редактировать процедуру",
     'filtre-categorie'   => "Все категории",
+
+    'avis_add_title' => "Оставить отзыв",
+    'avis_placeholder' => "Напишите ваш отзыв здесь...",
+    'btn_send' => "Отправить",
+    'avis_auth_required' => "Вы должны войти в систему, чтобы оставить отзыв.",
+    'avis_list_title' => "Список отзывов",
+    'avis_updated' => "Обновлено",
+    'avis_delete_confirm' => "Вы уверены, что хотите удалить этот отзыв?",
+    'avis_none' => "Пока нет отзывов.",
+    'answer_btn'   => "Ответить",
+
 
 ];
 

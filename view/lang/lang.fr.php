@@ -62,5 +62,15 @@ return [
     'prestation-update'   => "Modifier prestation",
     'filtre-categorie'   => "Toute les categories",
 
+    'avis_add_title' => "Ajouter un avis",
+    'avis_placeholder' => "Écrivez votre avis ici...",
+    'btn_send' => "Envoyer",
+    'avis_auth_required' => "Vous devez être connecté pour laisser un avis.",
+    'avis_list_title' => "Liste des avis",
+    'avis_updated' => "Mis à jour le",
+    'avis_delete_confirm' => "Êtes-vous sûr de vouloir supprimer cet avis ?",
+    'avis_none' => "Aucun avis pour le moment.",
+    'answer_btn'   => "Repondre",
+
 ];
 

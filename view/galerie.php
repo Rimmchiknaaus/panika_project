@@ -11,7 +11,7 @@
             <?php } ?>
             </select><br>
             <div class="btn__admin">
-                <button class="btn__admin_item" type="submit"><?= $language['add_btn'] ?></button>
+                <button class="btn__admin_item" type="submit"><?= $language['annuler_btn'] ?></button>
             </div>
         </form>
     <?php } ?>
