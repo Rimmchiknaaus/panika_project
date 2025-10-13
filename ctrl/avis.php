@@ -36,4 +36,10 @@ class avisList extends Ctrl
         foreach ($avisList as &$avis) {
             $avis['commentaires'] = LibAvis::getCommentaireByAvis($avis['id']);
         }
-        $this->addViewArg('avisList',
+        $this->addViewArg('avisList', $avisList);
+    }
+}
+
+// Exécute le Controlleur
+$ctrl = new avisList();
+$ctrl->execute();
