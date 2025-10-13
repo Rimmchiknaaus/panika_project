@@ -2,7 +2,7 @@
     <div class="section__header">
         <h2 class="section__title"><?= $language['nav_avis'] ?></h2>
     </div>
-<div class="avis-form">
+<div class="form">
     <h3><?= $language['avis_add_title'] ?></h3>
     <?php if (!empty($_SESSION['user'])): ?>
         <form action="/ctrl/avis-add.php?lang=<?= $lang ?>" method="post">
@@ -15,7 +15,7 @@
         <a class="btn__client" href="/ctrl/login-display.php?lang=<?= $lang ?>"><?= $language['nav_login'] ?></a>
     <?php endif ?>
 </div>
-<div class="avis">
+<div class="avis-list">
     <h3><?= $language['avis_list_title'] ?></h3>
     <?php $editCommentId = $_GET['editCommentaire'] ?? null; ?>
     <?php foreach ($args['avisList'] as $avis){ ?>

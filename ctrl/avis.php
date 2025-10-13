@@ -27,7 +27,7 @@ class avisList extends Ctrl
     public function do(): void
     {
 
-        $idUtilisateur = $_SESSION['user']['id'];
+
         $lang = $_GET['lang'] ?? 'fr';
         require $_SERVER['DOCUMENT_ROOT'] . "/view/lang/lang.$lang.php";
         
