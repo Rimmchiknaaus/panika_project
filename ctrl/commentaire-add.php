@@ -9,7 +9,7 @@ use App\Ctrl\Ctrl;
 use App\Model\Lib\Avis\Avis as LibAvis;
 
 /** Montre le forme pour ajouter des prestations. */
-class avisDelete extends Ctrl
+class commentaireAdd extends Ctrl
 {
     /** @Override */
     public function getPageTitle(): ?string
@@ -26,20 +26,20 @@ class avisDelete extends Ctrl
     /** @Override */
     public function do(): void
     {
-
-        $id = $_GET['id'];
+        $idAvis = $_POST['idAvis'] ?? null;
+        $contenu = $_POST['contenu'];
         $lang = $_GET['lang'] ?? 'fr';
 
         require $_SERVER['DOCUMENT_ROOT'] . "/view/lang/lang.$lang.php";
 
         $this->addViewArg('lang', $lang);
-
-        LibAvis::deleteAvis($id);
+        LibAvis::createCommentaire($idAvis, $contenu);
         
-        $this->redirectTo('/ctrl/avis.php?php?lang=' . $lang);
+        $this->redirectTo('/ctrl/avis.php?lang=' . $lang);
+
     }
 }
 
 // Exécute le Controlleur
-$ctrl = new avisDelete();
+$ctrl = new commentaireAdd();
 $ctrl->execute();

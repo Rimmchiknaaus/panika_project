@@ -32,7 +32,11 @@ h1{
     color: $greyDark;
     font-family: $primaryFont;
 }
-
+h3{
+    font-weight: bold;
+    color: $greyDark;
+    padding: 20px 0px;
+}
 section{    
     padding: 20px 0px;
 }
@@ -51,6 +55,9 @@ a {
 footer {
     margin-top: auto; 
     }
+.notification{
+    color: $pinkNormal;
+}
 @media (max-width: 991px) {
 
     .container{
@@ -61,6 +68,7 @@ footer {
         font-size: 32px;
         }
     }
+    
     section{    
         text-align: center;
     }
@@ -87,5 +95,8 @@ footer {
     .section__subtitle{
         font-size: 32px;
         margin-bottom: 20px;
+    }
+    h3{
+        padding: 10px 0px;
     }
 }

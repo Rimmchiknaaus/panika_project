@@ -32,10 +32,8 @@ class avisList extends Ctrl
         require $_SERVER['DOCUMENT_ROOT'] . "/view/lang/lang.$lang.php";
         
         $avisList = LibAvis::readAllAvis();
-        $this->addViewArg('avisList', $avisList);
-    }
-}
-
-// Exécute le Controlleur
-$ctrl = new avisList();
-$ctrl->execute();
+        
+        foreach ($avisList as &$avis) {
+            $avis['commentaires'] = LibAvis::getCommentaireByAvis($avis['id']);
+        }
+        $this->addViewArg('avisList',

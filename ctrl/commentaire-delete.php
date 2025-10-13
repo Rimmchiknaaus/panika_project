@@ -34,7 +34,7 @@ class avisDelete extends Ctrl
 
         $this->addViewArg('lang', $lang);
 
-        LibAvis::deleteAvis($id);
+        LibAvis::deleteCommentaire($id);
         
         $this->redirectTo('/ctrl/avis.php?php?lang=' . $lang);
     }

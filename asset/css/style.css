@@ -32,6 +32,12 @@ h1 {
   font-family: "Work Sans", sans-serif;
 }
 
+h3 {
+  font-weight: bold;
+  color: #373737;
+  padding: 20px 0px;
+}
+
 section {
   padding: 20px 0px;
 }
@@ -54,6 +60,10 @@ a {
 
 footer {
   margin-top: auto;
+}
+
+.notification {
+  color: #FF91A7;
 }
 
 @media (max-width: 991px) {
@@ -92,6 +102,9 @@ section {
   .section__subtitle {
     font-size: 32px;
     margin-bottom: 20px;
+  }
+  h3 {
+    padding: 10px 0px;
   }
 }
 /* HERO */
@@ -630,4 +643,36 @@ section {
     background: #373737;
     color: #F3F3F3;
   }
+}
+.form textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #B6B6B6;
+  font-size: 16px;
+}
+
+.avis__list {
+  background-color: white;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px #373737;
+}
+.avis__list__client {
+  display: block;
+  font-weight: bold;
+  color: #373737;
+  font-size: 16px;
+}
+.avis__list em {
+  display: block;
+  font-size: 14px;
+  color: #B6B6B6;
+}
+.avis__actions {
+  text-align: right;
 }/*# sourceMappingURL=style.css.map */
