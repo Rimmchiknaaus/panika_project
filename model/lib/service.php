@@ -82,20 +82,25 @@ class Service
         $prestation = $statement->fetch(PDO::FETCH_ASSOC);
         return $prestation;
     }
-    public static function getPrestationByCategorie($idCategorie, string $lang = 'fr'): array
+    public static function getPrestationByCategorie(int $idCategorie, string $lang = 'fr'): array
     {
         $libelleCol = $lang . '_libelle';
 
-        $query = "SELECT prestation.id, prestation.idCategorie, prestation.$libelleCol AS libelle, prestation.prix, prestation.duree, prestation.actif";
+        $query = " SELECT prestation.id, prestation.idCategorie, prestation.$libelleCol AS libelle, prestation.prix, prestation.duree, prestation.actif, GROUP_CONCAT(DISTINCT prestataire.prenom SEPARATOR ', ') AS prestataires";
         $query .= ' FROM prestation';
+        $query .= ' LEFT JOIN prestataire_categorie ON prestataire_categorie.idCategorie = prestation.idCategorie';
+        $query .= ' LEFT JOIN prestataire ON prestataire.id = prestataire_categorie.idPrestataire';
         $query .= ' JOIN categorie ON prestation.idCategorie = categorie.id';
         $query .= ' WHERE prestation.idCategorie = :idCategorie';
+        $query .= ' GROUP BY prestation.id';
+
         $statement = LibBdd::connect()->prepare($query);
         $statement->bindParam(':idCategorie', $idCategorie, PDO::PARAM_INT);
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
+
 
     public static function readAllCategorie(string $lang = 'fr'): ?array
         {
@@ -107,4 +112,3 @@ class Service
             return $statement->fetchAll(PDO::FETCH_ASSOC);
         }
 }
-

@@ -8,3 +8,42 @@
 @import 'galerie';
 @import 'avis';
 
+    .burger {
+        display: none;
+        font-size: 28px;
+        background: none;
+        border: 0;
+        cursor: pointer;
+    
+        i {
+        color: $greyNormal;
+        transition: color 0.3s ease;
+        &:hover { color: $greyDark; }
+        }
+    }
+    
+    @media (max-width: 991px) {
+        .burger { display: block; }
+    
+        #main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    
+        #main-nav.show {
+        display: block;
+        }
+    
+        .header__nav_menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        }
+    }
+  

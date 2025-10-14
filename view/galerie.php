@@ -16,8 +16,8 @@
         </form>
     <?php } ?>
     <div class="filtre-categories" id="filtre">
-        <button onclick="toggleFiltre()" class="filtre-btn"><i class="fa fa-filter"></i></button>
-        <div id="categorie-list" class="categorie-list">
+    <button class="filtre-btn"><i class="fa fa-filter"></i></button>
+        <div class="categorie-list" id="categorie-list">
             <?php foreach ($args['listCategorie'] as $c){ ?>
                 <a class="btn__filtre" href="/ctrl/galerie.php?categorie=<?= $c['id'] ?>&lang=<?= $lang ?>"><?= $c['libelle'] ?></a>
             <?php } ?>
@@ -38,8 +38,10 @@
     </div>
 </section>
 <script>
-function toggleFiltre() {
-    const filtre = document.getElementById('categorie-list');
-    filtre.classList.toggle('show');
-}
+    const filtreBtn = document.querySelector('.filtre-btn');
+    const categorieList = document.getElementById('categorie-list');
+
+    filtreBtn?.addEventListener('click', () => {
+    categorieList.classList.toggle('show');
+    });
 </script>

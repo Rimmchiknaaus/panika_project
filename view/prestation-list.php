@@ -21,6 +21,12 @@
                             <div class="prestation">
                                     <div class="prestation__description">
                                         <a href="#" class="prestation__text"><?= $p['libelle'] ?></a>
+                                        <?php if (!empty($p['prestataires'])) { ?>
+                                        <p class="prestation__masters">
+                                            <strong><?= $language['masters_label'] ?? 'Prestataires :' ?></strong>
+                                            <?= htmlspecialchars($p['prestataires']) ?>
+                                        </p>
+                                    <?php } ?>
                                         <p class="prestation__duree"><?= $p['duree'] ?>min</p>
                                     </div>
                                     <div class="prestation__prix">

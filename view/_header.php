@@ -27,32 +27,33 @@
                 <?= $language['nav_rdv'] ?>
             </a>
         </div>
-        <button class="burger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+        <button class="burger"><i class="fa-solid fa-bars"></i></button>
         <nav class="header__nav_menu" id="main-nav">
             <ul>
                 <li><a href="/ctrl/prestation-list.php?lang=<?= $lang ?>"><?= $language['nav_services'] ?></a></li>
                 <li><a href="/ctrl/galerie.php?lang=<?= $lang ?>"><?= $language['nav_galerie'] ?></a></li>
                 <li><a href="/ctrl/avis.php?lang=<?= $lang ?>"><?= $language['nav_avis'] ?></a></li>
                 <li><a href="/ctrl/home.php?lang=<?= $lang ?>#contact"><?= $language['nav_contact'] ?></a></li>
+
                 <?php if (!empty($_SESSION['user'])): ?>
-                    <li><a href="/ctrl/profile.php?lang=<?= $lang ?>"><?= $language['nav_profile'] . ', ' . $_SESSION['user']['prenom'] ?>!</a></li>
-                    <li><a href="/ctrl/logout.php?redirect=<?= urlencode($_SERVER['REQUEST_URI']) ?>&lang=<?= $lang ?>"><?= $language['nav_logout'] ?>
-                </a></li>
+                <li><a href="/ctrl/profile.php?lang=<?= $lang ?>"><?= $language['nav_profile'] . ', ' . $_SESSION['user']['prenom'] ?>!</a></li>
+                <li><a href="/ctrl/logout.php?redirect=<?= urlencode($_SERVER['REQUEST_URI']) ?>&lang=<?= $lang ?>"><?= $language['nav_logout'] ?></a></li>
                 <?php else: ?>
-                    <li><a href="/ctrl/login-display.php?lang=<?= $lang ?>"><?= $language['nav_login'] ?></a></li>
-                    <li><a href="/ctrl/register-display.php?lang=<?= $lang ?>"><?= $language['nav_register'] ?></a></li>
+                <li><a href="/ctrl/login-display.php?lang=<?= $lang ?>"><?= $language['nav_login'] ?></a></li>
+                <li><a href="/ctrl/register-display.php?lang=<?= $lang ?>"><?= $language['nav_register'] ?></a></li>
                 <?php endif; ?>
             </ul>
-            </nav>
+</nav>
     </div>
 </header>
-<script>
-function toggleMenu() {
-    const nav = document.getElementById('main-nav');
-    nav.classList.toggle('show');
-}
-</script>
-<script src="https://kit.fontawesome.com/026a02d0be.js" crossorigin="anonymous"></script>
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.getElementById('main-nav');
+
+        burger?.addEventListener('click', () => {
+        nav.classList.toggle('show');
+        });
+    </script>
 <script src="https://kit.fontawesome.com/026a02d0be.js" crossorigin="anonymous"></script>
 </body>
 </html>
