@@ -39,4 +39,7 @@ class Mail
         // NOTE le header 'from' n'a aucune autorité, il faut toujours s'en méfier !
         $fromAddress = $cfg['user'];
         $fromName = $cfg['from.name'];
-        $
+        $mail->setFrom($fromAddress, $fromName);
+        return $mail;
+    }
+}
