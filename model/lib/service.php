@@ -102,13 +102,4 @@ class Service
     }
 
 
-    public static function readAllCategorie(string $lang = 'fr'): ?array
-        {
-            $libelleCol = $lang . '_libelle';
-
-            $query = "SELECT categorie.id, categorie.image, categorie.$libelleCol AS libelle FROM categorie";
-            $statement = LibBdd::connect()->prepare($query);
-            $statement->execute();
-            return $statement->fetchAll(PDO::FETCH_ASSOC);
-        }
-}
+    public static function readAllCategorie(string $lang = 'fr'): 

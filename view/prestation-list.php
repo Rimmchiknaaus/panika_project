@@ -40,16 +40,4 @@
                                         </div>
                                     <?php } ?>
                             </div>
-                        <?php } ?>
-                    </div>
-                    <div class="categorie__img">
-                        <img src="<?= $categorie['image'] ?>" alt="<?= $categorie['libelle'] ?>">
-                    </div>
-                </div>
-            <?php } ?>
-            </div>
-            <div class="btn__group">
-                <a  href="rdv.html" class="btn__client"><?= $language['rdv_button']?></a>         
-            </div>
-        </section>
-</main>
+                        <?php } 

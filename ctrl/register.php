@@ -11,6 +11,7 @@ use App\Model\Lib\Auth\Auth;
 use App\Model\Lib\Mailer;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
+use App\Model\Lib\Mail as LibMail;
 
 /** Montre le forme pour ajouter des question. */
 class registerUser extends Ctrl
@@ -27,7 +28,6 @@ class registerUser extends Ctrl
         return null;
     }
 
-    /** @Override */
     public function do(): void
     {
         // Lis les informations saisies dans le formulaire
@@ -37,25 +37,8 @@ class registerUser extends Ctrl
         $passwordRepeat = $_POST['myPasswordRepeat'];
         $nom = $_POST['myFirstname'];
         $prenom = $_POST['myName'];
-        $lang = $_GET['lang'] ?? 'fr';
-
-        $mail = Mailer::sendEmail ();
-
-        // Twig
-
-        $twigLoader = new FilesystemLoader($_SERVER['DOCUMENT_ROOT'] . '/model/mail/templates');
-        $twig = new Environment($twigLoader);
-        $template = $twig->load('hello-' . $lang . '.twig');
-        $bodyMsg = $template->render(['name' => $nom]);       
-        $templateAlt = $twig->load('hello-' . $lang . '-alt.twig');
-        $AltBodyMsg = $templateAlt->render(['name' => $nom]); 
         
-        $mail->CharSet = "UTF-8";
-
-        $mail->addAddress ($email);  //Add a recipient     
-        $mail->Subject = ($lang === 'fr') ? 'Bienvenue sur Panika' : 'Добро пожаловать';
-        $mail->Body    = $bodyMsg; 
-        $mail->AltBody =$AltBodyMsg;
+        $lang = $_SESSION['lang'] ?? 'fr';
 
         // Vérifie les mots de passe
         if ($password !== $passwordRepeat) {
@@ -81,6 +64,23 @@ class registerUser extends Ctrl
             $this->redirectTo('/ctrl/register-display.php?lang=' . $lang);
             exit();
         }
+
+
+        // Envoie un mail, uniquement en cas de succès
+        // Ecrit le corps du message en HTML d'après un template twig                
+        $twigLoader = new FilesystemLoader($_SERVER['DOCUMENT_ROOT'] . '/model/mail/templates');
+        $twig = new Environment($twigLoader);
+        $template = $twig->load('hello-' . $lang . '.twig');
+        $bodyMsg = $template->render(['name' => $nom]);       
+        $templateAlt = $twig->load('hello-' . $lang . '-alt.twig');
+        $AltBodyMsg = $templateAlt->render(['name' => $nom]); 
+        $mail = LibMail::initMail();
+        $mail->addAddress ($email);
+        $mail->Subject = ($lang === 'fr') ? 'Bienvenue sur Panika' : 'Добро пожаловать';
+        $mail->Body    = $bodyMsg; 
+        $mail->AltBody =$AltBodyMsg;
+        $mailSuccess = $mail->send();
+                
         // rediriger vers la list de question
         $this->redirectTo('/ctrl/login-display.php?lang=' . $lang);
         exit();

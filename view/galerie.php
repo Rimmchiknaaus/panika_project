@@ -41,7 +41,4 @@
     const filtreBtn = document.querySelector('.filtre-btn');
     const categorieList = document.getElementById('categorie-list');
 
-    filtreBtn?.addEventListener('click', () => {
-    categorieList.classList.toggle('show');
-    });
-</script>
+    filtreBtn?.addEventListener('cl

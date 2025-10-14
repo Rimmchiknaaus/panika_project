@@ -54,7 +54,4 @@
         nav.classList.toggle('show');
         });
     </script>
-<script src="https://kit.fontawesome.com/026a02d0be.js" crossorigin="anonymous"></script>
-</body>
-</html>
-
+<script src="https://kit.fontawesome.com/026a02d0be.js" crossorigin="anonymous"

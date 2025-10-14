@@ -2,42 +2,41 @@
 
 namespace App\Model\Lib;
 
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-use App\Model\Lib\Server;
-use PHPMailer\PHPMailer\PHPMailer;
-
 require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/server.php';
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 
-class Mailer
+class Mail
 {
-    public static function sendEmail(): PHPMailer
+    /**
+     *  Initialise un mail.
+     * 
+     * @return PHPMailer Prototype d'un mail bien configuré, prêt à être envoyé.
+     */
+    public static function initMail(): PHPMailer
     {
+        // Lit le fichier de configuration
+        $cfg = parse_ini_file($_SERVER['DOCUMENT_ROOT'] . '/cfg/mail.ini');
+
+        // Crée et configure la connexion au serveur
         $mail = new PHPMailer(true);
-        $config = parse_ini_file($_SERVER['DOCUMENT_ROOT'] . '/cfg/mail.ini');
-            $mail = Server::connect();
+        $mail->Host = $cfg['host'];
+        $mail->Port = $cfg['port'];
+        $mail->Username = $cfg['user'];
+        $mail->Password = $cfg['pass'];
+        $mail->isSMTP();
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 
-            $mail->isHTML(true);  
-            //Recipients
-            $fromAdress = $config['from.adress'];
-            $fromName = $config['from.name'];
-            $mail -> setFrom($fromAdress, $fromName);
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'base64';
+        
+        // N'affiche pas les informations de debug
+        // $mail->SMTPDebug  = SMTP::DEBUG_SERVER;
 
-        
-            // $mail->addAddress('guillaume.raschiero@free.fr', 'GR free'); //Name is optional
-            $mail->addReplyTo('rimma@alwaysdata.net', 'Panika');
-            //$mail->addCC($cc);
-            //$mail->addBCC($bcc);
-        
-            //Attachments
-            // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-            // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-        
-            //Content
-        
-            return $mail;
-        
-    }
-}
+        // Informations sur l'émetteur
+        // NOTE le header 'from' n'a aucune autorité, il faut toujours s'en méfier !
+        $fromAddress = $cfg['user'];
+        $fromName = $cfg['from.name'];
+        $
