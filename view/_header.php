@@ -6,8 +6,6 @@
     <title><?= $args['pageTitle'] ?? $pageTitle ?? '' ?></title>
     <link rel="stylesheet" href="/asset/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/node_modules/leaflet/dist/leaflet.css">
-    <script src="/node_modules/leaflet/dist/leaflet.js"></script>
 </head>
 <body class="container">
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/view/lang/lang-init.php'; ?>
