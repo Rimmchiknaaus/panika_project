@@ -4,15 +4,21 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-  
+    
     &_item {
       overflow: hidden;
-  
+    
       img {
         width: 335px;
         height: 360px;
         object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.8s ease, filter 1s ease;
+        will-change: opacity, filte
       }
+      img:not(.lazy) {
+        opacity: 1;
+      }     
     }
   }
   
